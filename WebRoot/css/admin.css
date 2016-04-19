@@ -1,0 +1,125 @@
+.container {
+  width: 1024px !important;
+  padding: 0;
+}
+a,
+button {
+  outline: none !important;
+}
+a:focus,
+button:focus {
+  outline: none !important;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+}
+*::selection {
+  background: #222;
+  color: #fff;
+}
+.alert_log {
+  margin: 20px;
+}
+/*顶部*/
+.header_navbar {
+  width: 100%;
+  min-width: 1024px;
+  height: 50px;
+  line-height: 50px;
+  background: #222;
+  color: #999;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.header_navbar > .left {
+  float: left;
+}
+.header_navbar > .left a {
+  font-size: 120%;
+  color: #999999;
+  margin-left: 20px;
+}
+.header_navbar > .left a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+.header_navbar > .left a:first-child {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05), 0 2px 3px rgba(255, 255, 255, 0.3);
+}
+.header_navbar > .left a.add_admin {
+  font-size: 100%;
+}
+.header_navbar > .left a.add_admin .glyphicon {
+  font-size: 90%;
+  margin-right: 2px;
+}
+.header_navbar > .right {
+  float: right;
+  margin-right: 20px;
+}
+.header_navbar > .right a {
+  margin-left: 5px;
+  padding: 2px 5px;
+}
+/*左边*/
+.left_navbar {
+  width: 180px;
+  background: #222;
+  color: #ccc;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.left_navbar ul {
+  margin-top: 15px;
+}
+.left_navbar ul li.active a {
+  background: #337ab7;
+  color: #fff;
+}
+.left_navbar ul a {
+  display: block;
+  color: #337ab7;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+.left_navbar ul a:hover {
+  text-decoration: none;
+  background: #2f2f2f;
+}
+body {
+  margin-top: 50px;
+  margin-left: 180px;
+}
+#contentBox {
+  padding: 20px;
+}
+#contentBox > div > h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #31708f;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+#contentBox > div > h4 button,
+#contentBox > div > h4 a {
+  margin-left: 15px;
+}

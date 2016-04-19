@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADMIN - HOTEL</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+
+<!--顶部-->
+<div class="header_navbar">
+    <div class="left">
+        <a href="admin.html">后台管理中心</a>
+        <a class="add_admin" href=""><span class="glyphicon glyphicon-plus"></span>添加管理员</a>
+    </div>
+    <div class="right">
+        欢迎您，<span>CHENJEY</span>
+        <a class="btn btn-danger" href="javascript:;">退出</a>
+    </div>
+</div>
+
+<!--左边-->
+<div class="left_navbar">
+    <ul class="list-unstyled">
+        <li class="active"><a href="">客房类型管理</a></li>
+        <li><a href="">客房管理</a></li>
+        <li><a href="">客户信息管理</a></li>
+        <li><a href="">客房预订管理</a></li>
+        <li><a href="">客房入住管理</a></li>
+        <li><a href="">员工管理</a></li>
+    </ul>
+</div>
+
+<!--内容区-->
+<link rel="stylesheet" href="css/admin-room-type.css"/>
+<div id="contentBox">
+    <div class="room_type">
+        <h4>客房类型管理
+            <button class="btn btn-info btn-sm" id="addType_btn">添加类型</button>
+        </h4>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>类型名称</th>
+                    <th>修改</th>
+                </tr>
+                </thead>
+                <tbody id="room_type_body">
+               <!-- <tr>
+                    <td>1</td>
+                    <td>商务型房间</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">修改</button>
+                    </td>
+                </tr>-->
+
+                </tbody>
+            </table>
+        </div>
+        <!--添加类型窗口-->
+        <div class="modal fade" id="addRoomType">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4>添加客房类型</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group form-group-lg">
+                            <input type="text" class="form-control" id="room_type_input" placeholder="请输入客房类型"
+                                   autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="addType_sub" data-loading-text="正在添加...">
+                            添加类型
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--修改类型窗口-->
+        <div class="modal fade" id="updateRoomType">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4>修改客房类型</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group form-group-lg">
+                            <input type="text" class="form-control" id="up_room_type_input" autocomplete="off"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" id="deleteType_sub" data-loading-text="正在删除...">
+                            删除
+                        </button>
+                        <button type="button" class="btn btn-primary" id="updateType_sub" data-loading-text="正在修改...">
+                            添加类型
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 删除确认弹窗-->
+        <div class="modal fade" id="deleteConform">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4>确定删除吗？</h4>
+                    </div>
+                    <div class="modal-body">
+                        删除后将删除所有关联该类型的客房，你确定要删除？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-danger" id="deleteSure_sub" data-loading-text="正在删除...">
+                            删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
+<script src="js/admin-room-type.js"></script>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+
+</html>

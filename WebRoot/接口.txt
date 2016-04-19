@@ -13,10 +13,25 @@
     参数：ad_username,ad_password
     返回：success,reason
 
+添加客房类型
+    url:add_room_type.do
+    参数：rt_name
+    返回：success,reason
 
+修改客房类型
+    url:update_room_type.do
+    参数：rt_id,rt_name
+    返回：success.reason
 
+删除客房类型
+    url:delete_room_type.do
+    参数：rt_id
+    返回：success
 
-
+加载客房类型
+    url:load_room_type.do
+    参数：无
+    返回：[rt_id,rt_name]
 
 
 

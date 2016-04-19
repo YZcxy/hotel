@@ -1,0 +1,102 @@
+@import "inc";
+
+/*顶部*/
+.header_navbar {
+  width: 100%;
+  min-width: 1024px;
+  height: 50px;
+  line-height: 50px;
+  background: #222;
+  color: #999;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  > .left {
+    float: left;
+    a {
+      font-size: 120%;
+      color: #999999;
+      margin-left: 20px;
+      &:hover {
+        text-decoration: none;
+        color: #ccc;
+      }
+      &:first-child {
+        text-shadow: 0 0 2px fade(#fff, 5%), 0 2px 3px fade(#fff, 30%);
+      }
+      &.add_admin {
+        font-size: 100%;
+        .glyphicon {
+          font-size: 90%;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+  > .right {
+    float: right;
+    margin-right: 20px;
+    a {
+      margin-left: 5px;
+      padding: 2px 5px;
+    }
+  }
+}
+
+/*左边*/
+.left_navbar {
+  width: 180px;
+  background: #222;
+  color: #ccc;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+  ul {
+    margin-top: 15px;
+    li.active {
+      a {
+        background: #337ab7;
+        color: #fff;
+      }
+    }
+    a {
+      display: block;
+      color: #337ab7;
+      text-decoration: none;
+      .text-ellipsis;
+      font-size: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+      &:hover {
+        text-decoration: none;
+        background: lighten(#222222, 5%);
+      }
+    }
+  }
+}
+
+body {
+  margin-top: 50px;
+  margin-left: 180px;
+}
+
+#contentBox {
+  padding: 20px;
+  > div > h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #31708f;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    button, a {
+      margin-left: 15px;
+    }
+  }
+}
