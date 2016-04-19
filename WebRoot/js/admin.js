@@ -2,6 +2,12 @@
  * Created by CHEN on 2016/4/19.
  */
 
+//firefox bug
+$(function () {
+    $("button").each(function () {
+        this.disabled = false;
+    });
+});
 
 //提示消息
 function setLog(obj, type, text) {

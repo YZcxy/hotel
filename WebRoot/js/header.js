@@ -1,6 +1,16 @@
 /**
  * Created by CHEN on 2016/4/19.
  */
+//打开登录 注册窗口
+$(function () {
+    //firefox bug
+    $("button").each(function(){
+        this.disabled=false;
+    });
+    $("#openLoginBox").click(function () {
+        $("#loginBox").modal();
+    });
+});
 
 //用户登录
 $(function () {
@@ -42,17 +52,20 @@ $(function () {
         trigger: 'focus',
         placement: 'right',
         title: '<div style="padding: 5px 10px">请输入不少于6位的密码</div>'
-    });$("#regist_form input[name='u_name']").tooltip({
+    });
+    $("#regist_form input[name='u_name']").tooltip({
         html: true,
         trigger: 'focus',
         placement: 'right',
         title: '<div style="padding: 5px 10px">请输入真实姓名</div>'
-    });$("#regist_form input[name='u_idcard']").tooltip({
+    });
+    $("#regist_form input[name='u_idcard']").tooltip({
         html: true,
         trigger: 'focus',
         placement: 'right',
         title: '<div style="padding: 5px 10px">请输入身份证号码</div>'
-    });$("#regist_form input[name='u_tel']").tooltip({
+    });
+    $("#regist_form input[name='u_tel']").tooltip({
         html: true,
         trigger: 'focus',
         placement: 'right',

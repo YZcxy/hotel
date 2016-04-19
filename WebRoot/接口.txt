@@ -33,6 +33,38 @@
     参数：无
     返回：[rt_id,rt_name]
 
+添加房间信息
+    url：add_room.do
+    参数：r_num,r_size,r_typeid,r_isbath,r_monry
+    返回：success,reason
+
+加载客房
+    url:load_room.do
+    参数：无
+    返回：r_id,r_typeid,r_num,r_size,r_isbath,r_money,rt_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
