@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOTEL</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+<body>
+<!--顶部logo-->
+<div class="container" id="logo">
+    <h1>酒店预定系统</h1>
+</div>
+
+<!--导航栏-->
+<nav class="container navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="./">首页</a></li>
+        <li><a href="book.html">预定房间</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+        <li><a href="#" data-toggle="modal" data-target="#loginBox">登录 / 注册</a></li>
+    </ul>
+</nav>
+
+<!--内容区-->
+<div class="container">
+    <div class="col-xs-8">
+        <!--预订房间-->
+        <div id="book_room">
+            <h3>预订房间<span class="glyphicon glyphicon-circle-arrow-right"></span></h3>
+
+            <form class="form-horizontal" id="book_form">
+                <div class="form-group">
+                    <label class="control-label col-xs-2">房间类型</label>
+
+                    <div class="col-xs-7">
+                        <select class="form-control">
+                            <option>商务型</option>
+                            <option>商务型</option>
+                            <option>商务型</option>
+                            <option>商务型</option>
+                            <option>商务型</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-2">预订日期</label>
+
+                    <div class="col-xs-7">
+                        <input class="form-control" name="" type="text" id="book_date" autocomplete="off" readonly>
+                        <label for="book_date">
+                            <span class="glyphicon glyphicon-calendar choose_date_icon"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10">
+                        <button class="btn btn-primary" type="button">预订房间</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!--酒店实拍图-->
+        <div id="hotel_pictures">
+            <h3>酒店房间实拍图<span class="glyphicon glyphicon-picture"></span></h3>
+
+            <div class="box">
+                <ul class="list-inline" id="hotel_pictures_list">
+                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
+                    <li><img class="img-thumbnail" src="img/source/aa2.jpg"></li>
+                    <li><img class="img-thumbnail" src="img/source/aa3.jpg"></li>
+                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
+                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
+                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-4">
+        <!--房间预订信息-->
+        <div id="book_info">
+            <h3>房间预订信息<span class="glyphicon glyphicon-info-sign"></span></h3>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>成**</i>预订了商务间 2016-05-21 21:30预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+
+            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+        </div>
+    </div>
+</div>
+
+<!--登录 注册框-->
+<div class="modal fade" id="loginBox" aria-labelledby="modal_title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="modal_title">登录 / 注册</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#userLogin" data-toggle="tab">登录</a></li>
+                    <li><a href="#regist" data-toggle="tab">注册</a></li>
+                    <li><a href="#adminLogin" data-toggle="tab">员工登录</a></li>
+                </ul>
+                <div class="tab-content">
+                    <!-- 用户登录-->
+                    <div class="tab-pane active" id="userLogin">
+                        <form id="userLogin_form">
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="u_username" placeholder="用户名"
+                                       autocomplete="off">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="password" class="form-control" name="u_password" placeholder="密码">
+                            </div>
+                            <button class="btn btn-primary btn-block btn-lg submit" type="button"
+                                    data-loading-text="登录中...">登录
+                            </button>
+                        </form>
+                    </div>
+                    <!-- 用户注册-->
+                    <div class="tab-pane" id="regist">
+                        <form id="regist_form">
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="u_username" placeholder="用户名"
+                                       autocomplete="off">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="password" class="form-control" name="u_password" placeholder="密码">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="u_name" placeholder="真实姓名"
+                                       autocomplete="off">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="u_idcard" placeholder="身份证号码"
+                                       autocomplete="off">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="u_tel" placeholder="手机号码"
+                                       autocomplete="off">
+                            </div>
+                            <button class="btn btn-primary btn-block btn-lg submit" type="button" data-loading-text="注册中...">
+                                注册
+                            </button>
+                        </form>
+                    </div>
+                    <!-- 员工登录-->
+                    <div class="tab-pane" id="adminLogin">
+                        <form id="adminLogin_form">
+                            <div class="form-group form-group-lg">
+                                <input type="text" class="form-control" name="ad_username" placeholder="员工账号" autocomplete="off">
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <input type="password" class="form-control" name="ad_password" placeholder="密码">
+                            </div>
+                            <button class="btn btn-primary btn-block btn-lg submit" type="button" data-loading-text="正在登录...">
+                                员工登录
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/header.js"></script>
+<script src="js/index.js"></script>
+</body>
+</head>
+</html>

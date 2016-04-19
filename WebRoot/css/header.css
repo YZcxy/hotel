@@ -1,0 +1,12 @@
+#logo > h1 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #444444;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.5);
+  margin: 25px 5px;
+}
+/*登录框*/
+#loginBox form {
+  width: 75%;
+  padding: 40px;
+}

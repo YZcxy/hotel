@@ -1,0 +1,24 @@
+用户登录
+    url：user_login.do
+    参数：u_username,u_password
+    返回：success,reason
+
+用户注册
+    url：user_regist.do
+    参数：u_username,u_password,u_name,u_idcard,u_tel
+    返回：success,reason
+
+员工登录
+    url：admin_login.do
+    参数：ad_username,ad_password
+    返回：success,reason
+
+
+
+
+
+
+
+
+
+
