@@ -36,8 +36,10 @@ public class UserService {
 	public static boolean loginCheck(User user){
 		User mes = u.qByUsername(user.getU_username());
 		String password = MD5Util.MD5(user.getU_password());
-		if(password.equals(mes.getU_password())){
-			return true;
+		if(mes != null){
+			if(password.equals(mes.getU_password())){
+				return true;
+			}
 		}
 		return false;
 	}

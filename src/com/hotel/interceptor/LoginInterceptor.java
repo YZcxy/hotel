@@ -15,6 +15,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object arg2) throws Exception {
+		
 		// 获取请求的url
 		String url = request.getRequestURI();
 		// 判断url是否是公开 地址（实际使用时将公开 地址配置配置文件中）
@@ -23,19 +24,29 @@ public class LoginInterceptor implements HandlerInterceptor {
 			// 如果进行登陆提交，放行
 			return true;
 		}
+		
+		if (url.indexOf("logout.do") >= 0) {
+			// 如果进行注销提交，放行
+			return true;
+		}
+		
+		if (url.indexOf("regist.do") >= 0) {
+			// 如果进行注册提交，放行
+			return true;
+		}
+
 
 		// 判断session
 		HttpSession session = request.getSession();
 		// 从session中取出用户身份信息
 		String username = (String) session.getAttribute("username");
-
 		if (username != null) {
 			// 身份存在，放行
 			return true;
 		}
 
 		// 执行这里表示用户身份需要认证，跳转登陆页面
-		request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
+		request.getRequestDispatcher("index.html?login=true").forward(request,
 				response);
 
 		// return false表示拦截，不向下执行
@@ -47,14 +58,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 	public void afterCompletion(HttpServletRequest arg0,
 			HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
 			Object arg2, ModelAndView arg3) throws Exception {
-		// TODO Auto-generated method stub
 
 	}
 
