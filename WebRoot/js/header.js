@@ -28,9 +28,9 @@ $(function () {
                 if (data.success == true) {
                     location.reload();
                 } else {
-                    btn.button("reset");
                     setLog(f, 'alert-danger', '登录失败：' + data.reason);
                 }
+                btn.button("reset");
             }, "json");
         }
     });
@@ -90,10 +90,11 @@ $(function () {
             $.post("user_regist.do", d, function (data) {
                 if (data.success == true) {
                     setLog(f, 'alert-success', '注册成功，请转到登录页面登录！');
+                    f.reset();
                 } else {
-                    btn.button("reset");
                     setLog(f, 'alert-danger', '注册失败：' + data.reason);
                 }
+                btn.button("reset");
             }, "json");
         }
     });
@@ -115,9 +116,9 @@ $(function () {
                 if (data.success == true) {
                     location.reload();
                 } else {
-                    btn.button("reset");
                     setLog(f, 'alert-danger', '登录失败：' + data.reason);
                 }
+                btn.button("reset");
             }, "json");
         }
     });

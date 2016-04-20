@@ -4,16 +4,7 @@
 
 //加载类型
 $(function () {
-    $.get("load_room_type.do", {}, function (data) {
-        for (var i in data) {
-            var tr = $("<tr></tr>");
-            var td1 = $("<td>" + data[i].rt_id + "</td>");
-            var td2 = $("<td>" + data[i].rt_name + "</td>");
-            var td3 = $('<td><button class="btn btn-warning btn-sm" rt_id="' + data[i].rt_id + '">修改</button></td>');
-            tr.append(td1, td2, td3);
-            $("#room_type_body").append(tr);
-        }
-    });
+    loadType();
 });
 
 //添加类型
@@ -36,6 +27,7 @@ $(function () {
                 if (data.success == true) {
                     setLog(input.parent(), 'alert-success', '添加成功');
                     input.val("");
+                    loadType();
                 } else {
                     setLog(input.parent(), 'alert-danger', '添加失败：' + data.reason);
                 }
@@ -52,6 +44,8 @@ $(function () {
         $("#up_room_type_input").val(val);
         $("#updateRoomType").modal();
     });
+
+    //删除
     $("#deleteType_sub").click(function () {
         $("#deleteConform").modal();
     });
@@ -61,19 +55,22 @@ $(function () {
         var id = _this.attr("rt_id");
         $("#deleteConform").modal("hide");
         var btn = _this.button("loading");
-        _this.next()[0].disabled = true;
+        $("#updateType_sub")[0].disabled = true;
         $.post("delete_room_type.do", {
             rt_id: id
         }, function (data) {
-            _this.next()[0].disabled = false;
+            $("#updateType_sub")[0].disabled = false;
             if (data.success == true) {
                 $("#updateRoomType").modal("hide");
+                loadType();
             } else {
-                btn.button("reset");
                 setLog(input.parent(), 'alert-danger', '删除失败');
             }
+            btn.button("reset");
         }, "json");
     });
+
+    //修改
     $("#updateType_sub").click(function () {
         var id = $(this).attr("rt_id");
         var input = $("#up_room_type_input");
@@ -83,17 +80,17 @@ $(function () {
             setLog(input.parent(), 'alert-danger', '客房类型长度少于10');
         } else {
             var btn = $(this).button("loading");
-            $(this).prev()[0].disabled = true;
+            $("#deleteType_sub")[0].disabled = true;
             setLog(input.parent());
             $.post("add_room_type.do", {
                 rt_id: id,
                 rt_name: input.val()
             }, function (data) {
-                $(this).prev()[0].disabled = false;
+                $("#deleteType_sub")[0].disabled = false;
                 if (data.success == true) {
                     setLog(input.parent(), 'alert-success', '修改成功');
+                    loadType();
                 } else {
-                    btn.button("reset");
                     setLog(input.parent(), 'alert-danger', '修改失败：' + data.reason);
                 }
                 btn.button("reset");
@@ -102,3 +99,17 @@ $(function () {
     });
 });
 
+//加载房间类型
+function loadType() {
+    $.get("load_room_type.do", {}, function (data) {
+        $("#room_type_body").html("");
+        for (var i in data) {
+            var tr = $("<tr></tr>");
+            var td1 = $("<td>" + data[i].rt_id + "</td>");
+            var td2 = $("<td>" + data[i].rt_name + "</td>");
+            var td3 = $('<td><button class="btn btn-warning btn-sm" rt_id="' + data[i].rt_id + '">修改</button></td>');
+            tr.append(td1, td2, td3);
+            $("#room_type_body").append(tr);
+        }
+    });
+}
