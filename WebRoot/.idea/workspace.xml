@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/js/admin-room.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+              <caret line="114" column="52" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="52" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -65,21 +65,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="接口.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="接口.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/接口.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60670394">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-room.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/admin-room.less">
+      <file leaf-file-name="admin-customer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin-customer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.483871">
+              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-customer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/admin-customer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="98" column="9" selection-start-line="75" selection-start-column="8" selection-end-line="98" selection-end-column="9" />
+              <folding>
+                <marker date="1461119367950" expanded="true" signature="1247:1264" placeholder="..." />
+                <marker date="1461119367950" expanded="true" signature="1466:1483" placeholder="..." />
+                <marker date="1461119367950" expanded="true" signature="1667:1684" placeholder="..." />
+                <marker date="1461119367950" expanded="true" signature="1866:1883" placeholder="..." />
+                <marker date="1461119367950" expanded="true" signature="2063:2080" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-customer.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/admin-customer.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,9 +147,11 @@
         <option value="$PROJECT_DIR$/admin.html" />
         <option value="$PROJECT_DIR$/js/header.js" />
         <option value="$PROJECT_DIR$/admin-room.html" />
-        <option value="$PROJECT_DIR$/接口.txt" />
-        <option value="$PROJECT_DIR$/js/admin-room.js" />
         <option value="$PROJECT_DIR$/js/admin-room-type.js" />
+        <option value="$PROJECT_DIR$/admin-customer.html" />
+        <option value="$PROJECT_DIR$/js/admin-room.js" />
+        <option value="$PROJECT_DIR$/接口.txt" />
+        <option value="$PROJECT_DIR$/js/admin-customer.js" />
       </list>
     </option>
   </component>
@@ -250,6 +288,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Program Files\Tomcat 8.0\webapps\hotel\WebRoot\css" />
+      <recent name="D:\Program Files\Tomcat 8.0\webapps\hotel\WebRoot\js" />
       <recent name="D:\Program Files\Tomcat 8.0\webapps\hotel\WebRoot" />
     </key>
   </component>
@@ -307,7 +346,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16174921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -504,6 +543,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -512,20 +554,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5653631">
-          <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
-          <folding>
-            <marker date="1461118093023" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461118093023" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461118093023" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461118093023" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461118093023" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -545,6 +573,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="9" selection-start-line="75" selection-start-column="8" selection-end-line="98" selection-end-column="9" />
+          <folding>
+            <marker date="1461119367950" expanded="true" signature="1247:1264" placeholder="..." />
+            <marker date="1461119367950" expanded="true" signature="1466:1483" placeholder="..." />
+            <marker date="1461119367950" expanded="true" signature="1667:1684" placeholder="..." />
+            <marker date="1461119367950" expanded="true" signature="1866:1883" placeholder="..." />
+            <marker date="1461119367950" expanded="true" signature="2063:2080" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.483871">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/admin-room-type.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -558,7 +608,7 @@
     <entry file="file://$PROJECT_DIR$/js/admin-room.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <caret line="114" column="52" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="52" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
@@ -567,8 +617,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/接口.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60670394">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin-customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/admin-customer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

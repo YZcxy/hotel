@@ -53,8 +53,20 @@
     参数：r_id
     返回：success
 
+加载所有客户
+    url：load_user.do
+    参数：无
+    返回：[u_id,u_username,u_name,u_idcard,u_tel,u_date]
 
+修改客户信息
+    url：update_user.do
+    参数：u_id,u_username,u_name,u_idcard,u_tel
+    返回：success,reason
 
+删除客户信息
+    url:delete_user.do
+    参数：u_id
+    返回：success
 
 
 

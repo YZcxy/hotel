@@ -1,0 +1,52 @@
+.container {
+  width: 1024px !important;
+  padding: 0;
+}
+a,
+button {
+  outline: none !important;
+}
+a:focus,
+button:focus {
+  outline: none !important;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+}
+*::selection {
+  background: #222;
+  color: #fff;
+}
+.alert_log {
+  margin: 20px;
+}
+.room table {
+  margin: 20px;
+  width: 790px;
+}
+.room table th {
+  border-bottom: 0;
+  font-weight: 400;
+  color: #666;
+}
+.room table th:last-child {
+  text-align: center;
+  width: 100px;
+}
+.room table td:last-child {
+  text-align: center;
+}
+.room table td:last-child button {
+  padding: 2px 7px;
+}
+.room form label.col-xs-3 {
+  text-align: left;
+}
+.room form .form-group {
+  margin: 20px;
+}

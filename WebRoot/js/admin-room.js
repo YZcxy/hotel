@@ -80,7 +80,7 @@ $(function () {
     });
     $("#deleteSure_sub").click(function () {
         var _this = $("#deleteRoom_sub");
-        var id = f.rt_id;
+        var id = f.rt_id.value;
         $("#deleteConform").modal("hide");
         var btn = _this.button("loading");
         $("#updateRoom_sub")[0].disabled = true;
@@ -89,7 +89,7 @@ $(function () {
         }, function (data) {
             $("#updateRoom_sub")[0].disabled = false;
             if (data.success == true) {
-                $("#updateRoomType").modal("hide");
+                $("#updateRoom").modal("hide");
                 loadRoom();
             } else {
                 setLog(f, 'alert-danger', '删除失败');
@@ -130,6 +130,7 @@ $(function () {
 
 });
 
+//加载房间
 function loadRoom() {
     $.get("load_room.do", {}, function (data) {
         $("#room_body").html("");
