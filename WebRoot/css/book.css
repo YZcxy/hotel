@@ -94,6 +94,7 @@ body {
   color: #ffffff;
 }
 #book_room > .choose_date table {
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
