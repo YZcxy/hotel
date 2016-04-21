@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import com.hotel.dao.IUserDao;
 import com.hotel.factory.DAOFactory;
+import com.hotel.po.Admin;
 import com.hotel.po.User;
 import com.hotel.util.MD5Util;
 
@@ -42,6 +43,18 @@ public class UserService {
 			}
 		}
 		return false;
+	}
+	
+	//验证管理员的用户名和密码
+	public static Admin adLoginCheck(Admin admin){
+		Admin mes = u.qAdByUsername(admin.getAd_username());
+		String password = MD5Util.MD5(admin.getAd_password());
+		if(mes != null){
+			if(password.equals(mes.getAd_password())){
+				return mes;
+			}
+		}
+		return null;
 	}
 
 }

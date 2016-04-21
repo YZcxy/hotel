@@ -9,8 +9,11 @@
 	</insert>
 
 	<select id="qByUsername" resultType="User">
-		SELECT * FROM user WHERE u_username=#{u_username}
+		SELECT * FROM user WHERE u_username = #{u_username}
 	</select>
 
-
+	<select id="qAdByUsername" resultType="Admin">
+		SELECT * FROM admin WHERE ad_username = #{ad_username}
+	</select>
+	
 </mapper>
