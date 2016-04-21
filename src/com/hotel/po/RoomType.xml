@@ -2,7 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hotel.po.RoomTpye">
-	
+<mapper namespace="com.hotel.po.RoomType">
+	<insert id="addRoomType"  parameterType="RoomType">
+		INSERT INTO user (rt_name) 
+			VALUES(#{rt_name})
+	</insert>
 
 </mapper>
