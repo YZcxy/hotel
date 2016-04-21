@@ -20,5 +20,6 @@
 	<!-- 将mapper文件加入到配置文件中 -->
 	<mappers>
 		<mapper resource="com/hotel/po/User.xml"/>
+		<mapper resource="com/hotel/po/Room.xml"/>
 	</mappers>
 </configuration>
