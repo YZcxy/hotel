@@ -1,212 +1,201 @@
 @import "inc";
-
 .h3-title() {
-  margin: 0;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-  background: #777;
-  color: #fff;
-  font-size: 16px;
-  .glyphicon {
-    margin-left: 5px;
-    vertical-align: middle;
-  }
+	margin: 0;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	background: #777;
+	color: #fff;
+	font-size: 16px;
+	.glyphicon {
+		margin-left: 5px;
+		vertical-align: middle;
+	}
 }
-
 /*预订房间*/
 #book_room {
-  > div, ul {
-    margin: 5px;
-    padding: 0;
-    float: left;
-  }
-  > .choose_type {
-    border: 1px solid #eeeeee;
-
-    li {
-      border-bottom: 1px solid #eee;
-      &:last-child {
-        border: 0;
-      }
-      &.active {
-        a {
-          background: fade(#337ab7, 80%);
-          color: #ffffff;
-        }
-      }
-    }
-    a {
-      font-size: 13px;
-      width: 110px;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      .text-ellipsis;
-      padding: 5px;
-      &:hover {
-        background: #eee;
-        color: #337ab7;
-      }
-      &.active {
-        background: fade(#337ab7, 80%);
-        color: #ffffff;
-      }
-    }
-  }
-  > .choose_date {
-    width: 600px;
-    > nav {
-      background: #f8f8f8;
-      line-height: normal;
-      a {
-        width: 25%;
-        font-size: 13px;
-        display: inline-block;
-        text-decoration: none;
-        text-align: center;
-        .text-ellipsis;
-        padding: 5px 0;
-        &:hover {
-          background: #eee;
-          color: #337ab7;
-        }
-        &:focus {
-          color: #337ab7;;
-        }
-        &.active {
-          background: fade(#337ab7, 80%);
-          color: #ffffff;
-        }
-      }
-    }
-    table {
-      .unuser_select;
-      &.loading {
-        position: relative;
-        &:after{
-          position: absolute;
-          background: fade(#000000,3%);
-          content: '加载中~';
-          color: #0088cc;
-          font-size: 120%;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          text-align: center;
-          padding-top: 25%;
-        }
-      }
-      th {
-        width: 100%/7-1;
-        text-align: center;
-        font-weight: normal;
-        font-size: 14px;
-        color: #337ab7;
-        background: #eee;
-        border-bottom: 0;
-      }
-      td {
-        text-align: center;
-        height: 70px;
-        line-height: 70px;
-        color: #333;
-        padding: 0;
-        cursor: default;
-        &.enabled {
-          line-height: normal;
-          padding-top: 16px;
-          cursor: pointer;
-          > p {
-            color: #337ab7;
-            margin-top: 3px;
-            &:before {
-              content: '￥';
-              font-size: 80%;
-            }
-          }
-        }
-        &.active {
-          background-color: lighten(#337ab7, 40%);
-          border-left: 2px solid #337ab7;
-          &.enabled {
-            > p {
-              font-size: 120%;
-              font-weight: 600;
-            }
-          }
-        }
-        &.full {
-          position: relative;
-          &:after {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            content: '满';
-            line-height: 22px;
-            text-align: center;
-            font-size: 13px;
-            background: #eee;
-            color: #999;
-            display: inline-block;
-            width: 22px;
-            height: 22px;
-          }
-        }
-      }
-    }
-  }
-  > .choose_room {
-    width: 282px;
-    border: 1px solid #eee;
-    > h3 {
-      background: fade(#337ab7, 80%);
-      color: #fff;
-      margin: 0;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;
-    }
-    > div {
-      padding: 15px;
-      h5 {
-        font-weight: 600;
-        margin-left: -10px;
-      }
-      > p {
-        margin-bottom: 4px;
-        word-break: break-all;
-        &.book_date > span {
-          color: #337ab7;
-          font-size: 115%;
-          font-weight: 600;
-          &:first-child {
-            margin-left: 10px;
-            &:before {
-              content: '';
-            }
-          }
-          &:before {
-            content: '、';
-            margin-left: 5px;
-            margin-right: -5px;
-          }
-        }
-        &.price>span{
-          font-size: 150%;
-          font-weight: 600;
-          color: #FF9E36;
-          border-bottom: 1px dashed #eeeeee;
-          &:before{
-            content: '￥';
-            font-size: 70%;
-          }
-        }
-      }
-      >button{
-        margin-top: 25px;
-      }
-    }
-  }
-
+	> div,
+	ul {
+		margin: 5px;
+		padding: 0;
+		float: left;
+	}
+	> .choose_type {
+		border: 1px solid #eeeeee;
+		li {
+			border-bottom: 1px solid #eee;
+			&:last-child {
+				border: 0;
+			}
+			&.active {
+				a {
+					background: fade(#337ab7, 80%);
+					color: #ffffff;
+				}
+			}
+		}
+		a {
+			font-size: 13px;
+			width: 110px;
+			display: block;
+			text-decoration: none;
+			text-align: center;
+			.text-ellipsis;
+			padding: 5px;
+			&:hover {
+				background: #eee;
+				color: #337ab7;
+			}
+			&.active {
+				background: fade(#337ab7, 80%);
+				color: #ffffff;
+			}
+		}
+	}
+	> .choose_date {
+		width: 600px;
+		> nav {
+			background: #f8f8f8;
+			line-height: normal;
+			a {
+				width: 25%;
+				font-size: 13px;
+				display: inline-block;
+				text-decoration: none;
+				text-align: center;
+				.text-ellipsis;
+				padding: 5px 0;
+				&:hover {
+					background: #eee;
+					color: #337ab7;
+				}
+				&:focus {
+					color: #337ab7;
+				}
+				&.active {
+					background: fade(#337ab7, 80%);
+					color: #ffffff;
+				}
+			}
+		}
+		table {
+			.unuser_select;
+			&.loading {
+				position: relative;
+				&:after {
+					position: absolute;
+					background: fade(#000000,3%);
+					content: '加载中~';
+					color: #0088cc;
+					font-size: 120%;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					text-align: center;
+					padding-top: 25%;
+				}
+			}
+			th {
+				width: 100%/7-1;
+				text-align: center;
+				font-weight: normal;
+				font-size: 14px;
+				color: #337ab7;
+				background: #eee;
+				border-bottom: 0;
+			}
+			td {
+				text-align: center;
+				height: 70px;
+				line-height: 70px;
+				color: #ccc;
+				padding: 0;
+				font-size: 16px;
+				cursor: default;
+				&.enabled {
+					cursor: pointer;
+					color: #333;
+				}
+				&.active {
+					background-color: lighten(#337ab7, 40%);
+					border-left: 2px solid #337ab7;
+					font-weight: 600;
+					color: #666;
+				}
+			}
+		}
+	}
+	> .choose_room {
+		width: 282px;
+		border: 1px solid #eee;
+		> h3 {
+			background: fade(#337ab7, 80%);
+			color: #fff;
+			margin: 0;
+			padding: 10px;
+			text-align: center;
+			font-size: 14px;
+		}
+		> div {
+			padding: 15px;
+			h5 {
+				font-weight: 600;
+				margin-left: -10px;
+			}
+			> p {
+				margin-bottom: 4px;
+				word-break: break-all;
+				&.book_date > span {
+					color: #337ab7;
+					font-size: 115%;
+					font-weight: 600;
+					&:first-child {
+						margin-left: 10px;
+						&:before {
+							content: '';
+						}
+					}
+					&:before {
+						content: '、';
+						margin-left: 5px;
+						margin-right: -5px;
+					}
+				}
+				&.room_num {
+					span {
+						cursor: pointer;
+						background: fade(#0088CC,10%);
+						border-radius: 3px;
+						padding: 5px 7px;
+						font-size: 14px;
+						color: #999;
+						margin-right: 3px;
+						.unuser_select;
+						&.active {
+							border-left: 2px solid fade(#0088CC,80%);
+							background: fade(#0088cc,60%);
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
+				&.price {
+					border-top: 1px dashed #eee;
+					margin-top: 40px;
+					>span {
+						font-size: 150%;
+						font-weight: 600;
+						color: #FF9E36;
+						&:before {
+							content: '￥';
+							font-size: 70%;
+						}
+					}
+				}
+			}
+			>button {
+				margin-top: 25px;
+			}
+		}
+	}
 }

@@ -68,9 +68,15 @@
     参数：u_id
     返回：success
 
+加载可以选择的房间号
+	url:load_select_room.do
+	参数：type,date
+	返回:[r_num,r_money]
 
-
-
+预定房间
+	url:add_room_info.do
+	参数：type,date,num
+	返回：success
 
 
 
