@@ -1,5 +1,7 @@
 package com.hotel.dao.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.hotel.dao.IUserDao;
@@ -36,7 +38,7 @@ public class UserDao implements IUserDao{
 		User user = null;
 		try {
 			session = MyBatisUtil.createSession();
-			user = (User)session.selectOne(User.class.getName()+".qByUsername", u_username);
+			user =(User)session.selectOne(User.class.getName()+".qByUsername", u_username);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -53,7 +55,7 @@ public class UserDao implements IUserDao{
 		Admin admin = null;
 		try {
 			session = MyBatisUtil.createSession();
-			admin = (Admin)session.selectOne(User.class.getName()+".qAdByUsername", ad_username);
+			admin = session.selectOne(User.class.getName()+".qAdByUsername", ad_username);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,6 +63,61 @@ public class UserDao implements IUserDao{
 			MyBatisUtil.closeSession(session);
 		}
 		return admin;
+	}
+	
+	//查询所有user用户
+	@Override
+	public List<User> qAllUser() {
+		SqlSession session = null;
+		List<User> list = null;
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(User.class.getName()+".qAllUser");
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
+
+	//根据Id修改用户信息
+	@Override
+	public boolean updateUser(User user) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(User.class.getName()+".updateUser", user);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+	
+	//根据Id删除用户信息
+	@Override
+	public boolean deleteUser(int u_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.delete(User.class.getName()+".deleteUser", u_id);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
 	}
 
 }

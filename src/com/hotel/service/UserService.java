@@ -1,6 +1,7 @@
 package com.hotel.service;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.hotel.dao.IUserDao;
 import com.hotel.factory.DAOFactory;
@@ -26,6 +27,9 @@ public class UserService {
 
 	//进行注册
 	public static boolean register(User user) {
+		if(user.getU_password() == null){
+			return false;
+		}
 		Date datatime = new Date(System.currentTimeMillis());
 		user.setU_date(datatime);
 		user.setU_password(MD5Util.MD5(user.getU_password()));
@@ -56,5 +60,30 @@ public class UserService {
 		}
 		return null;
 	}
-
+	
+	//返回查到的user数组
+	public static List<User> loadAllUser(){
+		List<User> list = u.qAllUser();
+		return list;
+	}
+	
+	//返回是否修改成功
+	public static boolean updateUser(User user){
+		if(user.getU_id() == 0){
+			return false;
+		}
+		boolean flag = u.updateUser(user);
+		
+		return flag;
+	}
+	
+	//返回是否成功删除
+	public static boolean deleteUser(User user){
+		if(user.getU_id() == 0){
+			return false;
+		}
+		boolean flag = u.deleteUser(user.getU_id());
+		
+		return flag;
+	}
 }

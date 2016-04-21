@@ -16,4 +16,22 @@
 		SELECT * FROM admin WHERE ad_username = #{ad_username}
 	</select>
 	
+	<select id="qAllUser" resultType="User">
+		SELECT * FROM user
+	</select>
+	
+	<update id="updateUser" parameterType="User">
+		UPDATE user SET
+		<if test="u_username!=null">u_username=#{u_username}</if>
+		<if test="u_password!=null">u_password=#{u_password}</if>
+		<if test="u_name!=null">u_name=#{u_name}</if>
+		<if test="u_idcard!=null">u_idcard=#{u_idcard}</if>
+		<if test="u_tel!=null">u_tel=#{u_tel}</if>
+		WHERE u_id = #{u_id}
+	</update>
+	
+	<delete id="deleteUser" parameterType="Integer">
+		DELETE FROM user WHERE u_id = #{u_id}
+	</delete>
+	
 </mapper>

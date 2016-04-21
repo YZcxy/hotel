@@ -2,6 +2,7 @@ package com.hotel.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ import com.hotel.service.UserService;
 public class UserController {
 	
 	//拦截注册请求
-	@RequestMapping("user_regist.do")
+	@RequestMapping("user_regist")
 	@ResponseBody
 	public Map user_regist(User user){	
 		Map map = new HashMap();
@@ -34,7 +35,7 @@ public class UserController {
 				map.put("success", true);
 			}else{
 				//服务器的原因导致无法注册
-				map.put("reason", "服务器需要休息会~");
+				map.put("reason", "请不要为难服务器！！");
 				map.put("success", false);
 			}
 		}else{
@@ -46,7 +47,7 @@ public class UserController {
 	}
 	
 	//拦截用户登录请求
-	@RequestMapping("user_login.do")
+	@RequestMapping("user_login")
 	@ResponseBody
 	public Map user_login(User user,HttpSession session){	
 		Map map = new HashMap();
@@ -64,7 +65,7 @@ public class UserController {
 	}
 	
 	//拦截注销请求
-	@RequestMapping("user_logout.do")
+	@RequestMapping("user_logout")
 	@ResponseBody
 	public User user_logout(HttpSession session,HttpServletRequest req,HttpServletResponse res){	
 		session.invalidate();
@@ -77,8 +78,8 @@ public class UserController {
 		return null;
 	}
 	
-	//拦截管理登录请求
-	@RequestMapping("admin_login.do")
+	//拦截管理员登录请求
+	@RequestMapping("admin_login")
 	@ResponseBody
 	public Map admin_login(Admin admin,HttpSession session){	
 		Map map = new HashMap();
@@ -92,6 +93,51 @@ public class UserController {
 			map.put("reason","用户名或密码错误");
 			map.put("success", false);
 		}	
+		return map;
+	}
+	
+	//拦截加载所有用户请求
+	@RequestMapping("load_user")
+	@ResponseBody
+	public List<User> load_user(){	
+		List<User> list = UserService.loadAllUser();
+		
+		return list;
+	}
+	
+	//拦截根据id修改用户信息请求
+	@RequestMapping("update_user")
+	@ResponseBody
+	public Map update_user(User user){	
+		Map map = new HashMap();
+		map.put("success", false);
+		if(UserService.updateUser(user)){
+			//成功修改
+			map.put("success", true);
+		}else{
+			//服务器的原因导致无法注册
+			map.put("reason", "请不要为难服务器！！");
+			map.put("success", false);
+		}
+		
+		return map;
+	}
+	
+	//拦截根据Id删除用户信息请求
+	@RequestMapping("delete_user")
+	@ResponseBody
+	public Map delete_user(User user){	
+		Map map = new HashMap();
+		map.put("success", false);
+		if(UserService.deleteUser(user)){
+			//成功删除
+			map.put("success", true);
+		}else{
+			//服务器的原因导致无法注册
+			map.put("reason", "请不要为难服务器！！");
+			map.put("success", false);
+		}
+		
 		return map;
 	}
 }
