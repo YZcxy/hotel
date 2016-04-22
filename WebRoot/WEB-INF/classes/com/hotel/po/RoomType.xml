@@ -10,5 +10,14 @@
 	<select id="getAllRoomType" resultType="RoomType">
 	 SELECT * FROM room_type
 	</select>
-	
+	<update id="updateRoomType" parameterType="RoomType">
+		update room_type set
+			rt_name=#{rt_name}
+			where rt_id=#{rt_id}
+	</update>
+	<delete id="deleteRoomType">
+		delete 
+		from room_type
+		where rt_id=#{rt_id}
+	</delete>
 </mapper>

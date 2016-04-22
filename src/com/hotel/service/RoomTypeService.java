@@ -20,9 +20,14 @@ public class RoomTypeService {
 			return false;
 		}
 		
-		
 	}
 	public static List<RoomType> loadRoomType(){
 		return rt.getAllRoomType();
+	}
+	public static boolean updateRoomType(RoomType roomType){
+		return rt.updateRoomType(roomType);
+	}
+	public static boolean deleteRoomType(int rt_id){
+		return rt.deleteRoomType(rt_id);
 	}
 }

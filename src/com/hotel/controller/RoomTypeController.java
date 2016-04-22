@@ -31,5 +31,21 @@ public class RoomTypeController {
 	public List<RoomType> loadRoomType(){
 		return RoomTypeService.loadRoomType();
 	}
-	
+	@RequestMapping("update_room_type")
+	@ResponseBody
+	public Map updateRoomType(RoomType rt){
+		Map map = new HashMap();		
+		if(RoomTypeService.updateRoomType(rt)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+			map.put("reason", "失败");
+		}	
+		return map;
+	}
+	@RequestMapping("delete_room_type")
+	@ResponseBody
+	public boolean deleteRoomType(int rt_id){
+		return RoomTypeService.deleteRoomType(rt_id);
+	}
 }

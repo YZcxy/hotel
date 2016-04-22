@@ -80,4 +80,22 @@ public class RoomTypeDao implements IRoomTypeDao {
 		return isSuccess;
 	}
 	
+	@Override
+	public boolean updateRoomType(RoomType rt) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(RoomType.class.getName()+".updateRoomType", rt);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+	
 }

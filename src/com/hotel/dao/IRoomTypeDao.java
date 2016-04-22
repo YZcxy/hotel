@@ -10,4 +10,5 @@ public interface IRoomTypeDao {
 	public List<RoomType> getAllRoomType();
 	public RoomType queryRoomType(String rt_name);
 	public boolean deleteRoomType(int rt_id);
+	public boolean updateRoomType(RoomType rt);
 }
