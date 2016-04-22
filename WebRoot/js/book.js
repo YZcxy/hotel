@@ -103,7 +103,7 @@ function writeDate() {
 	td.html("");
 	td.removeClass("enabled");
 	td.removeClass("active");
-	//$("#book_sub")[0].disabled = true;
+	$("#book_sub")[0].disabled = true;
 	for (var i = 1; i <= monthNum; i++) {
 		var _n = i + dayStart - 1;
 		if (month - 1 != new Date().getMonth() || i >= new Date().getDate()) {
@@ -160,6 +160,10 @@ function writeDate() {
 //确定预定
 $(function() {
 	$("#book_sub").click(function() {
+		if(!$.cookie("u_username")){
+			$("#loginBox").modal();
+			return;
+		}
 		var btn = $(this).button("loading");
 		$.post("add_book_info.do",bookData,function(data){
 			btn.button("reset");
