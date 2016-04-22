@@ -46,5 +46,40 @@ public class RoomDao implements IRoomDao{
 		}	
 		return isSuccess;
 	}
+
+	@Override
+	public boolean updateRoom(Room room) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(Room.class.getName()+".updateRoom",room);
+			session.commit();
+			isSuccess=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}	
+		return isSuccess;
+	}
+	@Override
+	public boolean deleteRoom(int r_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.delete(Room.class.getName()+".deleteRoom",r_id);
+			session.commit();
+			isSuccess=true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}	
+		return isSuccess;
+	}
 	
 }

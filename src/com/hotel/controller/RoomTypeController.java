@@ -22,7 +22,7 @@ public class RoomTypeController {
 			map.put("success", true);
 		}else{
 			map.put("success", false);
-			map.put("reason", "注册失败");
+			map.put("reason", "已存在此类型");
 		}	
 		return map;
 	}

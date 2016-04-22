@@ -13,7 +13,14 @@ public class RoomTypeService {
 	
 	//添加房间类型
 	public static boolean addRoomType(String rt_name){	
-		return rt.addRoomType(rt_name);
+		//判断是否存在
+		if(rt.queryRoomType(rt_name)==null){
+			return rt.addRoomType(rt_name);
+		}else{
+			return false;
+		}
+		
+		
 	}
 	public static List<RoomType> loadRoomType(){
 		return rt.getAllRoomType();

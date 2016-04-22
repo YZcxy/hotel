@@ -20,7 +20,18 @@ public class RoomController {
 	@RequestMapping("add_room")
 	@ResponseBody
 	public boolean addRoom(Room room){
-		
 		return RoomService.addRoom(room);
+	}
+	
+	@RequestMapping("update_room")
+	@ResponseBody
+	public boolean updateRoom(Room room){
+		return RoomService.updateRoom(room);
+	}
+
+	@RequestMapping("delete_room")
+	@ResponseBody
+	public boolean updateRoom(int r_id){
+		return RoomService.deleteRoom(r_id);
 	}
 }

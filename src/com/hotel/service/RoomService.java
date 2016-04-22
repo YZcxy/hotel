@@ -17,4 +17,13 @@ public class RoomService {
 		
 		return r.addRoom(room);
 	}
+	public static boolean updateRoom(Room room){
+		
+		return r.updateRoom(room);
+	}
+	
+	public static boolean deleteRoom(int r_id){
+		
+		return r.deleteRoom(r_id);
+	}
 }

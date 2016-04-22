@@ -3,11 +3,23 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hotel.po.Room">
-	<select id="getAllRoom" resultType="Room">
-		SELECT * FROM room
+	<select id="getAllRoom" resultType="RoomCustom">
+		select *
+		from room,room_type
+		WHERE room.r_typeid = room_type.rt_id
 	</select>
 	<insert id="addRoom" parameterType="Room">
 		INSERT INTO room (r_num,r_size,r_typeid,r_isbath,r_money)
 			VALUES(#{r_num},#{r_size},#{r_typeid},#{r_isbath},#{r_money})
 	</insert>
+	<update id="updateRoom" parameterType="Room">
+		update room set
+			r_num=#{r_num},r_size=#{r_size},r_typeid=#{r_typeid},r_isbath=#{r_isbath},r_money=#{r_money}
+			where r_id=#{r_id}
+	</update>
+	<delete id="deleteRoom">
+		delete 
+		from room
+		where r_id=#{r_id}
+	</delete>
 </mapper>

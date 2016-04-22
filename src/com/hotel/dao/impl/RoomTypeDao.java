@@ -62,5 +62,22 @@ public class RoomTypeDao implements IRoomTypeDao {
 		}
 		return list;
 	}
+	@Override
+	public boolean deleteRoomType(int rt_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.delete(RoomType.class.getName()+".deleteRoomType", rt_id);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 	
 }
