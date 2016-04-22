@@ -1,5 +1,8 @@
 package com.hotel.dao.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.hotel.dao.IRoomTypeDao;
@@ -26,6 +29,39 @@ public class RoomTypeDao implements IRoomTypeDao {
 			MyBatisUtil.closeSession(session);
 		}
 		return false;
+	}
+	@Override
+	public RoomType queryRoomType(String rt_name) {
+		SqlSession session = null;
+		RoomType roomType = null;
+		try {
+			session = MyBatisUtil.createSession();
+			roomType = (RoomType)session.selectOne(RoomType.class.getName()+".queryRoomType", rt_name);
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}		
+		return roomType;
+	}
+	@Override
+	public List<RoomType> getAllRoomType() {
+		SqlSession session = null;
+		List<RoomType> list = new ArrayList<RoomType>();
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(RoomType.class.getName()+".");
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return null;
 	}
 	
 }
