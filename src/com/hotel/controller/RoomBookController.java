@@ -1,0 +1,25 @@
+package com.hotel.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hotel.po.Room;
+import com.hotel.po.RoomBookCustom;
+import com.hotel.service.RoomService;
+
+@Controller
+public class RoomBookController {
+	@RequestMapping("load_select_room")
+	@ResponseBody
+	public List<Room> addRoomType(RoomBookCustom rbc){
+		List<Room> list = RoomService
+		
+		return list;
+	}
+}

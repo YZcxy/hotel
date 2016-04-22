@@ -1,13 +1,21 @@
 package com.hotel.po;
 
-public class RoomBookCustom extends RoomBook {
-	private String rt_name;
+import java.sql.Date;
 
-	public String getRt_name() {
-		return rt_name;
+public class RoomBookCustom{
+	private String type;
+	private Date date;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
-	public void setRt_name(String rt_name) {
-		this.rt_name = rt_name;
-	}
 }
