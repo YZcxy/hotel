@@ -1,6 +1,7 @@
 package com.hotel.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hotel.po.RoomType;
 import com.hotel.service.RoomTypeService;
 
 @Controller
@@ -23,6 +25,11 @@ public class RoomTypeController {
 			map.put("reason", "注册失败");
 		}	
 		return map;
+	}
+	@RequestMapping("load_room_type")
+	@ResponseBody
+	public List<RoomType> loadRoomType(){
+		return RoomTypeService.loadRoomType();
 	}
 	
 }

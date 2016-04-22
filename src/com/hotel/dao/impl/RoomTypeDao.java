@@ -52,16 +52,15 @@ public class RoomTypeDao implements IRoomTypeDao {
 		List<RoomType> list = new ArrayList<RoomType>();
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(RoomType.class.getName()+".");
+			list = session.selectList(RoomType.class.getName()+".getAllRoomType");
 			session.commit();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			session.rollback();
 		}finally{
 			MyBatisUtil.closeSession(session);
 		}
-		return null;
+		return list;
 	}
 	
 }

@@ -4,8 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hotel.po.RoomType">
 	<insert id="addRoomType"  parameterType="RoomType">
-		INSERT INTO user (rt_name) 
+		INSERT INTO room_type (rt_name) 
 			VALUES(#{rt_name})
 	</insert>
-
+	<select id="getAllRoomType" resultType="RoomType">
+	 SELECT * FROM room_type
+	</select>
+	
 </mapper>
