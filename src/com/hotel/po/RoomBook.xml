@@ -3,5 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hotel.po.RoomBook">
-	
+	<select id="loadSelectRoom" parameterType="RoomBookCustom" resultType="Room">
+		SELECT room.r_num,room.r_money
+		FROM room
+		WHERE room.r_typeid=(
+		SELECT room_type.rt_id
+		FROM room_type
+		WHERE room_type.rt_name=#{rt_name})
+			AND room.r_id!=ANY(
+					SELECT room_book.rb_rid
+					FROM room_book
+					WHERE room_book.rb_bookdate=#{rb_bookdate}
+				)
+	</select>
 </mapper>

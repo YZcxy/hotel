@@ -8,6 +8,7 @@ public class RoomBook {
 	private int rb_rid;
 	private Date rb_bookdate;
 	private Date rb_indate;
+	private int rb_status;
 	public int getRb_id() {
 		return rb_id;
 	}
@@ -37,5 +38,11 @@ public class RoomBook {
 	}
 	public void setRb_indate(Date rb_indate) {
 		this.rb_indate = rb_indate;
+	}
+	public int getRb_status() {
+		return rb_status;
+	}
+	public void setRb_status(int rb_status) {
+		this.rb_status = rb_status;
 	}
 }
