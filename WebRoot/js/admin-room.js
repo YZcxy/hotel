@@ -80,7 +80,7 @@ $(function () {
     });
     $("#deleteSure_sub").click(function () {
         var _this = $("#deleteRoom_sub");
-        var id = f.rt_id.value;
+        var id = f.r_id.value;
         $("#deleteConform").modal("hide");
         var btn = _this.button("loading");
         $("#updateRoom_sub")[0].disabled = true;
