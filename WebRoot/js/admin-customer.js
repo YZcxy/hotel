@@ -281,7 +281,7 @@ function loadCustomer() {
 			var td4 = $("<td>" + data[i].u_idcard + "</td>");
 			var td5 = $("<td>" + data[i].u_tel + "</td>");
 			var td6 = $("<td>" + data[i].u_date + "</td>");
-			var td7 = $('<td><button class="btn btn-warning btn-sm">修改</button></td>');
+			var td7 = $('<td><button class="btn btn-info btn-sm">订房间</button><button class="btn btn-warning btn-sm">修改</button></td>');
 			tr.append(td1, td2, td3, td4, td5, td6, td7);
 			$("#customer_body").append(tr);
 		}
