@@ -15,5 +15,8 @@ public class RoomBookService {
 	public static List<Room> loadSelectRoom(RoomBookCustom rbc){
 		return rb.loadSelectRoom(rbc);
 	}
+	public static boolean addBook(RoomBookCustom rbc){
+		return rb.addBook(rbc);
+	}
 
 }

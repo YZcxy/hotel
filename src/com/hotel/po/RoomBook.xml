@@ -16,4 +16,7 @@
 					WHERE room_book.rb_bookdate=#{date}
 				)
 	</select>
+	<insert id="addBook" parameterType="RoomBookCustom">
+		
+	</insert>
 </mapper>

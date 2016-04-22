@@ -28,5 +28,23 @@ public class RoomBookDao implements IRoomBookDao {
 		}
 		return list;
 	}
+
+	@Override
+	public boolean addBook(RoomBookCustom rbc) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.insert(RoomBook.class.getName()+".addBook",rbc);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 	
 }

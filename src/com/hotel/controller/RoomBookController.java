@@ -22,4 +22,15 @@ public class RoomBookController {
 		List<Room> list = RoomBookService.loadSelectRoom(rbc);
 		return list;
 	}
+	@RequestMapping("add_book")
+	@ResponseBody
+	public Map addBook(RoomBookCustom rbc){
+		Map map = new HashMap();
+		if(RoomBookService.addBook(rbc)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+		}
+		return map;
+	}
 }
