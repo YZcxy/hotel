@@ -74,8 +74,13 @@
 	返回:[r_num,r_money]
 
 预定房间
-	url:add_room_info.do
-	参数：type,date,num
+	url:add_book.do
+	参数：username,type,date,num
+	返回：success
+
+入住房间
+	url:add_inroom.do
+	参数：username,type,date,num
 	返回：success
 
 

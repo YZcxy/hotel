@@ -5,7 +5,8 @@
 var bookData = {
 	type: '',
 	date: '',
-	num: ''
+	num: '',
+	username: ''
 }
 
 //选择房间类型
@@ -160,18 +161,20 @@ function writeDate() {
 //确定预定
 $(function() {
 	$("#book_sub").click(function() {
-		if(!$.cookie("u_username")){
+		if (!$.cookie("u_username")) {
 			$("#loginBox").modal();
 			return;
+		} else {
+			bookData.username = $.cookie("u_username");
 		}
 		var btn = $(this).button("loading");
-		$.post("add_book_info.do",bookData,function(data){
+		$.post("add_book.do", bookData, function(data) {
 			btn.button("reset");
-			if(data.success == true){
-				setLog($("#book_log"),"alert-success","预定成功");
-			}else {
-				setLog($("#book_log"),"alert-danger","预定失败");
+			if (data.success == true) {
+				setLog($("#book_log"), "alert-success", "预定成功");
+			} else {
+				setLog($("#book_log"), "alert-danger", "预定失败");
 			}
-		},'json');
+		}, 'json');
 	});
 });
