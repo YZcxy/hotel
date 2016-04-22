@@ -18,7 +18,7 @@ public class RoomDao implements IRoomDao{
 		List<Room> list = new ArrayList<Room>();
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(RoomType.class.getName()+".getAllRoom");
+			list = session.selectList(Room.class.getName()+".getAllRoom");
 			session.commit();
 			
 		} catch (Exception e) {
@@ -35,8 +35,9 @@ public class RoomDao implements IRoomDao{
 		boolean isSuccess = false;
 		try {
 			session = MyBatisUtil.createSession();
-			session.insert(RoomType.class.getName()+".addRoom",room);
+			session.insert(Room.class.getName()+".addRoom",room);
 			session.commit();
+			isSuccess=true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.rollback();
