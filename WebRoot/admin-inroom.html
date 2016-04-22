@@ -1,5 +1,3 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -37,7 +35,7 @@
 		</div>
 
 		<!--内容区-->
-		<link rel="stylesheet" href="css/admin-book.css" />
+		<link rel="stylesheet" href="css/admin-inroom.css" />
 		<div id="contentBox">
 			<div class="room">
 				<h4>客房预定管理</h4>
@@ -49,8 +47,8 @@
 								<th>用户名</th>
 								<th>真实姓名</th>
 								<th>房间号</th>
-								<th>预定时间</th>
-								<th>修改</th>
+								<th>入住时间</th>
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody id="room_body">
@@ -61,7 +59,6 @@
 								<td>320</td>
 								<td>2016-12-02</td>
 								<td>
-									<button class="btn btn-info btn-sm">入住</button>
 									<button class="btn btn-danger btn-sm">删除</button>
 								</td>
 							</tr>
@@ -81,7 +78,7 @@
 								<h4>确定删除吗？</h4>
 							</div>
 							<div class="modal-body">
-								删除预定信息后将不能恢复，你确定要删除？
+								删除入住信息后将不能恢复，你确定要删除？
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -96,7 +93,7 @@
 		</div>
 
 		<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
-		<script src="js/admin-book.js"></script>
+		<script src="js/admin-inroom.js"></script>
 
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="js/admin.js"></script>
