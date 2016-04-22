@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hotel.po.Room;
 import com.hotel.po.RoomBookCustom;
+import com.hotel.service.RoomBookService;
 import com.hotel.service.RoomService;
 
 @Controller
 public class RoomBookController {
 	@RequestMapping("load_select_room")
 	@ResponseBody
-	public List<Room> addRoomType(RoomBookCustom rbc){
-		List<Room> list = RoomService
-		
+	public List<Room> loadSelectRoom(RoomBookCustom rbc){
+		List<Room> list = RoomBookService.loadSelectRoom(rbc);
 		return list;
 	}
 }
