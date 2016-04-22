@@ -6,5 +6,8 @@
 	<select id="getAllRoom" resultType="Room">
 		SELECT * FROM room
 	</select>
-
+	<insert id="addRoom" parameterType="Room">
+		INSERT INTO room (r_num,r_size,r_typeid,r_isbath,r_monry)
+			VALUES(#{r_num},#{r_size},#{r_typeid},#{r_isbath},#{r_monry})
+	</insert>
 </mapper>

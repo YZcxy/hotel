@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hotel.po.Room;
+import com.hotel.service.RoomService;
 
 @Controller
 public class RoomController {
@@ -14,6 +15,12 @@ public class RoomController {
 	@ResponseBody
 	public List<Room> loadRoom(){
 		
-		return null;
+		return RoomService.loadRoom();
+	}
+	@RequestMapping("add_room")
+	@ResponseBody
+	public boolean addRoom(Room room){
+		
+		return RoomService.addRoom(room);
 	}
 }

@@ -13,4 +13,7 @@ public class RoomService {
 	public static List<Room> loadRoom(){
 		return r.getAllRoom();
 	}
+	public static boolean addRoom(Room Room){
+		return false;
+	}
 }

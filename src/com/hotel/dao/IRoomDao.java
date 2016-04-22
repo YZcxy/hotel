@@ -6,4 +6,5 @@ import com.hotel.po.Room;
 
 public interface IRoomDao {
 	public List<Room> getAllRoom();
+	public boolean addRoom(Room room);
 }
