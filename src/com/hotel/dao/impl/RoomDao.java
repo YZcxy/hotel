@@ -81,5 +81,22 @@ public class RoomDao implements IRoomDao{
 		}	
 		return isSuccess;
 	}
+
+	@Override
+	public Room queryRoomByNum(String r_num) {
+		SqlSession session = null;
+		Room room = null;
+		try {
+			session = MyBatisUtil.createSession();
+			room = session.selectOne(Room.class.getName()+".queryRoomByNum",r_num);
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return room;
+	}
 	
 }

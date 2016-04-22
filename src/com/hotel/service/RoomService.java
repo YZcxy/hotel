@@ -14,8 +14,10 @@ public class RoomService {
 		return r.getAllRoom();
 	}
 	public static boolean addRoom(Room room){
-		
-		return r.addRoom(room);
+		if(r.queryRoomByNum(room.getR_num())!=null){
+			return false;
+		}
+		return true;
 	}
 	public static boolean updateRoom(Room room){
 		

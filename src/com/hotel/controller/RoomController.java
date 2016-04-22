@@ -28,7 +28,7 @@ public class RoomController {
 			map.put("success", true);
 		}else{
 			map.put("success", false);
-			map.put("reason", "服务器出错");
+			map.put("reason", "房间号已存在");
 		}
 		
 		return map;
@@ -43,7 +43,7 @@ public class RoomController {
 		}else{
 			map.put("success", false);
 			map.put("reason", "失败");
-		}	
+		}
 		return map;
 	}
 

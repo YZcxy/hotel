@@ -9,6 +9,11 @@
 		WHERE room.r_typeid = room_type.rt_id
 		order by r_id
 	</select>
+	<select id="queryRoomByNum" parameterType="int" resultType="Room">
+		select *
+		from room
+		where room.r_num=#{r_num}
+	</select>
 	<insert id="addRoom" parameterType="Room">
 		INSERT INTO room (r_num,r_size,r_typeid,r_isbath,r_money)
 			VALUES(#{r_num},#{r_size},#{r_typeid},#{r_isbath},#{r_money})

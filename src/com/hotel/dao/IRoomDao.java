@@ -9,4 +9,5 @@ public interface IRoomDao {
 	public boolean addRoom(Room room);
 	public boolean updateRoom(Room room);
 	public boolean deleteRoom(int r_id);
+	public Room queryRoomByNum(String r_num);
 }
