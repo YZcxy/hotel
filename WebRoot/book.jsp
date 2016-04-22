@@ -113,8 +113,8 @@
 						</p>
 						<h5>选择房间号</h5>
 						<p class="room_num">
-							<span class="">123</span>
-							<span class="active">123</span>
+							<!--<span class="">123</span>
+							<span class="active">123</span>-->
 						</p>
 						<p class="price">总价：<span>0</span></p>
 						<button class="btn btn-primary" type="button" id="book_sub" data-loading-text="正在预订...">确定预订</button>

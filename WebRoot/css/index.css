@@ -96,7 +96,7 @@ body {
   width: 305px;
   height: 200px;
 }
-/*房间预订信息*/
+/*酒店简介*/
 #book_info {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.05), 0 4px 7px rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
@@ -114,21 +114,8 @@ body {
   vertical-align: middle;
 }
 #book_info > p {
-  margin: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #888;
-  font-size: 13px;
-}
-#book_info > p i {
-  color: #666;
-  margin-right: 10px;
-}
-#book_info > p:hover {
-  color: #bbb;
-}
-#book_info > p:hover i {
-  color: #bbb;
+  text-indent: 2em;
+  padding: 10px;
+  color: #999;
 }
 /*# sourceMappingURL=index.css.map */

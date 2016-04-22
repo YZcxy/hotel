@@ -24,13 +24,7 @@
                     <label class="control-label col-xs-2">房间类型</label>
 
                     <div class="col-xs-7">
-                        <select class="form-control">
-                            <option>商务型</option>
-                            <option>商务型</option>
-                            <option>商务型</option>
-                            <option>商务型</option>
-                            <option>商务型</option>
-                        </select>
+                        <select class="form-control" id="book_type"></select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-xs-offset-2 col-xs-10">
-                        <button class="btn btn-primary" type="button">预订房间</button>
+                        <button class="btn btn-primary" id="go_book_page" type="button">预订房间</button>
                     </div>
                 </div>
 
@@ -70,25 +64,10 @@
     </div>
 
     <div class="col-xs-4">
-        <!--房间预订信息-->
+        <!--酒店简介-->
         <div id="book_info">
-            <h3>房间预订信息<span class="glyphicon glyphicon-info-sign"></span></h3>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>成**</i>预订了商务间 2016-05-21 21:30预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
-
-            <p><i>王**</i>预订了商务间 2016-05-21 21:30 </p>
+            <h3>酒店简介</h3>
+			<P>希尔顿国际酒店集团(HI)，为总部设于英国的希尔顿集团公司旗下分支，拥有除美国外全球范围内“希尔顿”商标的使用权。希尔顿国际酒店集团经营管理着403间酒店，包括261间希尔顿酒店，142间面向中端市场的“斯堪的克”酒店，以及与总部设在北美的希尔顿酒店管理公司合资经营的、分布在12个国家中的18间“康拉德”（亦称“港丽”）酒店。它与希尔顿酒店管理公司组合的全球营销联盟，令世界范围内双方旗下酒店总数超过了2700间，其中500多间酒店共同使用希尔顿的品牌。希尔顿国际酒店集团在全球80个国家内有着逾71000名雇员。</P>
         </div>
     </div>
 </div>

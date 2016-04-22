@@ -31,6 +31,14 @@ $(function() {
 	});
 });
 
+//从主页过来
+$(function(){
+	var sear = location.search;
+	var type = sear.substring(6,sear.indexOf("&"));
+	var date = sear.substring(sear.indexOf("&date=")+6);
+	
+});
+
 //选择月份
 $(function() {
 	var nav = $("#book_room .choose_date>nav");
