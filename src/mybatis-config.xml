@@ -22,6 +22,8 @@
 		<mapper resource="com/hotel/po/User.xml"/>
 		<mapper resource="com/hotel/po/Room.xml"/>
 		<mapper resource="com/hotel/po/RoomType.xml"/>
+		<mapper resource="com/hotel/po/RoomBook.xml"/>
+		
 		
 	</mappers>
 </configuration>
