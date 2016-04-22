@@ -128,4 +128,7 @@
 	参数：无
 	返回：无
 
-
+加载用户的预定信息
+	url:load_book_info.do
+	参数：u_username
+	返回：[rb_id,rt_name,r_num,r_size,r_isbath,r_money,rb_bookdate]

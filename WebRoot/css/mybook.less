@@ -1,0 +1,40 @@
+@import "inc";
+.h3-title() {
+	margin: 0;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	background: #777;
+	color: #fff;
+	font-size: 16px;
+	.glyphicon {
+		margin-left: 5px;
+		vertical-align: middle;
+	}
+}
+/*预订信息*/
+#book_room {
+	.box-shadow;
+	padding-bottom: 10px;
+	> h3 {
+		.h3-title;
+	}
+	>div.tb {
+		padding: 15px;
+		table {
+			th {
+				&:last-child {
+					width: 100px;
+					text-align: center;
+				}
+			}
+			td {
+				&:last-child {
+					text-align: center;
+				}
+				button {
+					padding: 2px 5px;
+				}
+			}
+		}
+	}
+}

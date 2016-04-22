@@ -27,7 +27,7 @@ $(function() {
 		ul.find("li").removeClass("active");
 		$(this).addClass("active");
 		$(".choose_room .book_type span").html($(this).find("a").html());
-		bookData.type = data[i].rt_name;
+		bookData.type = $(this).find("a").html();
 	});
 });
 

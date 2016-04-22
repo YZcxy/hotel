@@ -10,7 +10,7 @@
         <a href="admin-room-type.jsp">后台管理中心</a>
     </div>
     <div class="right">
-    	欢迎您，<span></span>
+    	欢迎您，<span id="login_admin"></span>
         <a class="btn btn-danger" id="exit_admin" href="javascript:;">退出</a>
     </div>
 </div>
