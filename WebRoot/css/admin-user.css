@@ -1,0 +1,93 @@
+.container {
+  width: 1024px !important;
+  padding: 0;
+}
+a,
+button {
+  outline: none !important;
+}
+a:focus,
+button:focus {
+  outline: none !important;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "微软雅黑", sans-serif;
+}
+*::selection {
+  background: #222;
+  color: #fff;
+}
+.alert_log {
+  margin: 20px;
+}
+.room table {
+  margin: 20px;
+  width: 790px;
+}
+.room table th {
+  border-bottom: 0;
+  font-weight: 400;
+  color: #666;
+}
+.room table th:last-child {
+  text-align: center;
+  width: 100px;
+}
+.room table td:last-child {
+  text-align: center;
+}
+.room table td:last-child button {
+  padding: 2px 7px;
+}
+.room form label.col-xs-3 {
+  text-align: left;
+}
+.room form .form-group {
+  margin: 20px;
+}
+.room form input:read-only {
+  background: #fff;
+}
+.room #bookRoom_form {
+  min-height: 200px;
+}
+.room #choose_room {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  min-height: 55px;
+}
+.room #choose_room span {
+  padding: 5px 7px;
+  background: rgba(0, 136, 204, 0.1);
+  border-radius: 4px;
+  color: #777;
+  font-size: 14px;
+  margin-right: 3px;
+  cursor: pointer;
+  line-height: 32px;
+}
+.room #choose_room span.active {
+  color: #fff;
+  background: rgba(0, 136, 204, 0.6);
+  border-left: 2px solid #0088cc;
+  font-weight: 600;
+}
+.room #book_price {
+  border: 0;
+  box-shadow: none;
+  color: #0088CC;
+  font-weight: 600;
+  font-size: 180%;
+}
+.room #book_price:before {
+  content: '￥';
+  font-size: 80%;
+}
+/*# sourceMappingURL=admin-user.css.map */

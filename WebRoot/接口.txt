@@ -103,12 +103,25 @@
 	参数：无
 	返回：[rb_id,u_username,u_name,r_num,rb_indate]
 
+加载所有员工
+	url:load_all_admin.do
+	参数：无
+	返回：[ad_id,ad_username,ad_name,ad_tel,ad_pow,ad_date]
 
+添加员工
+	url:add_admin.do
+	参数：ad_username,ad_password,ad_name,ad_tel,ad_pow
+	返回：success,reason
 
+删除员工
+	url:delete_admin.do
+	参数：ad_id
+	返回：success
 
-
-
-
+修改员工信息
+	url:update_admin.do
+	参数：ad_id,ad_username,ad_name,ad_tel,ad_pow
+	返回：success,reason
 
 
 
