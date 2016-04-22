@@ -22,8 +22,16 @@ public class RoomController {
 	}
 	@RequestMapping("add_room")
 	@ResponseBody
-	public boolean addRoom(Room room){
-		return RoomService.addRoom(room);
+	public Map addRoom(Room room){
+		Map map = new HashMap();
+		if(RoomService.addRoom(room)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+			map.put("reason", "服务器出错");
+		}
+		
+		return map;
 	}
 	
 	@RequestMapping("update_room")
@@ -41,7 +49,9 @@ public class RoomController {
 
 	@RequestMapping("delete_room")
 	@ResponseBody
-	public boolean updateRoom(int r_id){
-		return RoomService.deleteRoom(r_id);
+	public Map updateRoom(int r_id){
+		Map map = new HashMap();
+		map.put("success", RoomService.deleteRoom(r_id));
+		return map;
 	}
 }
