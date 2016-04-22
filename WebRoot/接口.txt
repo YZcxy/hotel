@@ -98,6 +98,10 @@
 	参数：rb_id
 	返回：success
 
+加载所有入住信息
+	url:load_all_inroom.do
+	参数：无
+	返回：[rb_id,u_username,u_name,r_num,rb_indate]
 
 
 
