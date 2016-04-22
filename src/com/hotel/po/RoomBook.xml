@@ -9,11 +9,11 @@
 		WHERE room.r_typeid=(
 		SELECT room_type.rt_id
 		FROM room_type
-		WHERE room_type.rt_name=#{rt_name})
-			AND room.r_id!=ANY(
+		WHERE room_type.rt_name=#{type})
+			AND room.r_id NOT IN(
 					SELECT room_book.rb_rid
 					FROM room_book
-					WHERE room_book.rb_bookdate=#{rb_bookdate}
+					WHERE room_book.rb_bookdate=#{date}
 				)
 	</select>
 </mapper>

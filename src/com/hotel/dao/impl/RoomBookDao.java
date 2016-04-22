@@ -19,7 +19,7 @@ public class RoomBookDao implements IRoomBookDao {
 		List<Room> list = new ArrayList<Room>();
 		try {
 			session = MyBatisUtil.createSession();
-			list = session.selectList(RoomBook.class.getName()+".loadSelectRoom");
+			list = session.selectList(RoomBook.class.getName()+".loadSelectRoom",rbc);
 			session.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -13,7 +13,6 @@ public class RoomBookService {
 	private static IRoomBookDao rb = DAOFactory.getRoomBookDao();
 	
 	public static List<Room> loadSelectRoom(RoomBookCustom rbc){
-		
 		return rb.loadSelectRoom(rbc);
 	}
 
