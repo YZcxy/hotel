@@ -36,7 +36,7 @@ body {
 }
 .room table th:last-child {
   text-align: center;
-  width: 100px;
+  width: 120px;
 }
 .room table td:last-child {
   text-align: center;

@@ -83,11 +83,20 @@
 	参数：username,type,date,num
 	返回：success
 
+加载所有预定信息
+	url:load_all_book.do
+	参数：无
+	返回：[rb_id,u_username,u_name,r_num,rb_date]
 
+预定变为入住
+	url：change_book_inroom.do
+	参数：rb_id
+	返回：success
 
-
-
-
+删除预定信息
+	url:delete_book.do
+	参数：rb_id
+	返回：success
 
 
 
