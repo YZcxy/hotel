@@ -43,6 +43,7 @@ $(function () {
         var val = $(this).parent().prev().html();
         $("#up_room_type_input").val(val);
         $("#updateRoomType").modal();
+        $("#room_type_id").val($(this).parent().prev().prev().html());
     });
 
     //删除
@@ -52,7 +53,7 @@ $(function () {
     $("#deleteSure_sub").click(function () {
         var input = $("#up_room_type_input");
         var _this = $("#deleteType_sub");
-        var id = _this.attr("rt_id");
+        var id = $("#room_type_id").val();
         $("#deleteConform").modal("hide");
         var btn = _this.button("loading");
         $("#updateType_sub")[0].disabled = true;
@@ -72,7 +73,7 @@ $(function () {
 
     //修改
     $("#updateType_sub").click(function () {
-        var id = $(this).attr("rt_id");
+        var id = $("#room_type_id").val();
         var input = $("#up_room_type_input");
         if (input.val().trim().length == 0) {
             setLog(input.parent(), 'alert-danger', '客房类型不能为空');
@@ -82,7 +83,7 @@ $(function () {
             var btn = $(this).button("loading");
             $("#deleteType_sub")[0].disabled = true;
             setLog(input.parent());
-            $.post("add_room_type.do", {
+            $.post("update_room_type.do", {
                 rt_id: id,
                 rt_name: input.val()
             }, function (data) {
