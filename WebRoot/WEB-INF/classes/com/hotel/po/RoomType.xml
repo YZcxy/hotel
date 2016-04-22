@@ -8,8 +8,7 @@
 			VALUES(#{rt_name})
 	</insert>
 	<select id="getAllRoomType" resultType="RoomType">
-	 SELECT * FROM room_type 
-	 order by rt_id
+	 SELECT * FROM room_type
 	</select>
 	<update id="updateRoomType" parameterType="RoomType">
 		update room_type set
