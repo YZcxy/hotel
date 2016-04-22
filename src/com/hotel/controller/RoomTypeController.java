@@ -45,7 +45,8 @@ public class RoomTypeController {
 	}
 	@RequestMapping("delete_room_type")
 	@ResponseBody
-	public boolean deleteRoomType(int rt_id){
-		return RoomTypeService.deleteRoomType(rt_id);
+	public boolean deleteRoomType(RoomType roomType){
+		System.out.println(roomType.getRt_id()+"  "+roomType.getRt_name());
+		return RoomTypeService.deleteRoomType(roomType.getRt_id());
 	}
 }

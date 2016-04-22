@@ -17,7 +17,7 @@
 			r_num=#{r_num},r_size=#{r_size},r_typeid=#{r_typeid},r_isbath=#{r_isbath},r_money=#{r_money}
 			where r_id=#{r_id}
 	</update>
-	<delete id="deleteRoom">
+	<delete id="deleteRoom" parameterType="Room">
 		delete 
 		from room
 		where r_id=#{r_id}

@@ -15,7 +15,7 @@
 			rt_name=#{rt_name}
 			where rt_id=#{rt_id}
 	</update>
-	<delete id="deleteRoomType">
+	<delete id="deleteRoomType" parameterType="Integer">
 		delete 
 		from room_type
 		where rt_id=#{rt_id}
