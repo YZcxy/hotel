@@ -1,7 +1,3 @@
-/**
- * Created by CHEN on 2016/4/18.
- */
-
 //预订房间
 $(function () {
     //时间选择

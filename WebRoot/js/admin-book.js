@@ -1,7 +1,3 @@
-/**
- * Created by CHEN on 2016/4/19.
- */
-
 //加载所有预定
 $(function() {
 	loadBook();

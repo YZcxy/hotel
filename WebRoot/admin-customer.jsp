@@ -1,38 +1,17 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
 	<head>
-		<title>ADMIN - HOTEL</title>
+		<title>客户管理 - 后台管理</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/admin.css" />
 	</head>
 
 	<body>
-
-		<!--顶部-->
-		<div class="header_navbar">
-			<div class="left">
-				<a href="admin.inc.jsp">后台管理中心</a>
-				<a class="add_admin" href=""><span class="glyphicon glyphicon-plus"></span>添加管理员</a>
-			</div>
-			<div class="right">
-				欢迎您，<span>CHENJEY</span>
-				<a class="btn btn-danger" href="javascript:;">退出</a>
-			</div>
-		</div>
-
-		<!--左边-->
-		<div class="left_navbar">
-			<ul class="list-unstyled">
-				<li><a href="">客房类型管理</a></li>
-				<li><a href="">客房管理</a></li>
-				<li class="active"><a href="">客户信息管理</a></li>
-				<li><a href="">客房预订管理</a></li>
-				<li><a href="">客房入住管理</a></li>
-				<li><a href="">员工管理</a></li>
-			</ul>
-		</div>
+		
+		<!--引用header.jsp-->
+		<%@include file="admin-header.jsp"%>
 
 		<!--内容区-->
 		<link rel="stylesheet" href="css/admin-customer.css" />
@@ -270,13 +249,10 @@
 			</div>
 		</div>
 
-		<script src="bootstrap/js/jquery-2.1.4.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
 		<script src="js/admin-customer.js"></script>
 
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<script src="js/admin.js"></script>
 	</body>
 
 </html>

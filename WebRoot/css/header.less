@@ -1,3 +1,5 @@
+@import "inc";
+
 #logo {
   > h1 {
     font-size: 32px;
@@ -8,6 +10,39 @@
   }
 }
 
+.header_navbar {
+	background: #222;
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 20px;
+	li {
+		color: #bbb;
+		a {
+			padding:0 15px;
+			text-decoration: none;
+			color: #999;
+			display: block;
+			&:hover {
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+		&.active {
+			background: #080808;
+			a {
+				color: #fff;
+			}
+		}
+		a.btn {
+			padding: 5px;
+			margin-right: 5px;
+			font-size: 13px;
+			display: inline;
+			color: #fff;
+		}
+	}
+}
+
 /*登录框*/
 #loginBox {
   form {
@@ -15,3 +50,4 @@
     padding: 40px;
   }
 }
+

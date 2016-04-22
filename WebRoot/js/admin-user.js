@@ -1,7 +1,3 @@
-/**
- * Created by CHEN on 2016/4/19.
- */
-
 //加载员工
 $(function() {
 	loadAdmin();
@@ -53,7 +49,6 @@ $(function() {
 		f.ad_tel.value = _this.parent().parent().find("td").eq(3).html();
 		f.ad_pow.value = _this.parent().parent().find("td").eq(4).attr("ad_pow");
 	});
-	$("#updateAdmin").modal();
 	//删除
 	$("#deleteAdmin_sub").click(function() {
 		$("#deleteConform").modal();

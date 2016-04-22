@@ -1,7 +1,3 @@
-/**
- * Created by CHEN on 2016/4/19.
- */
-
 //加载客房
 $(function () {
     loadRoom();

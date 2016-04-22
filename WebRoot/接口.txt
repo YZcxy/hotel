@@ -123,6 +123,9 @@
 	参数：ad_id,ad_username,ad_name,ad_tel,ad_pow
 	返回：success,reason
 
-
+退出账号
+	url:eixt_user.do
+	参数：无
+	返回：无
 
 
