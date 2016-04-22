@@ -1,3 +1,5 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,60 +10,60 @@
 </head>
 <body>
 
-<!--顶部-->
+<!--é¡¶é¨-->
 <div class="header_navbar">
     <div class="left">
-        <a href="admin.inc.jsp">后台管理中心</a>
-        <a class="add_admin" href=""><span class="glyphicon glyphicon-plus"></span>添加管理员</a>
+        <a href="admin.inc.jsp">åå°ç®¡çä¸­å¿</a>
+        <a class="add_admin" href=""><span class="glyphicon glyphicon-plus"></span>æ·»å ç®¡çå</a>
     </div>
     <div class="right">
-        欢迎您，<span>CHENJEY</span>
-        <a class="btn btn-danger" href="javascript:;">退出</a>
+        æ¬¢è¿æ¨ï¼<span>CHENJEY</span>
+        <a class="btn btn-danger" href="javascript:;">éåº</a>
     </div>
 </div>
 
-<!--左边-->
+<!--å·¦è¾¹-->
 <div class="left_navbar">
     <ul class="list-unstyled">
-        <li><a href="">客房类型管理</a></li>
-        <li class="active"><a href="">客房管理</a></li>
-        <li><a href="">客户信息管理</a></li>
-        <li><a href="">客房预订管理</a></li>
-        <li><a href="">客房入住管理</a></li>
-        <li><a href="">员工管理</a></li>
+        <li><a href="">å®¢æ¿ç±»åç®¡ç</a></li>
+        <li class="active"><a href="">å®¢æ¿ç®¡ç</a></li>
+        <li><a href="">å®¢æ·ä¿¡æ¯ç®¡ç</a></li>
+        <li><a href="">å®¢æ¿é¢è®¢ç®¡ç</a></li>
+        <li><a href="">å®¢æ¿å¥ä½ç®¡ç</a></li>
+        <li><a href="">åå·¥ç®¡ç</a></li>
     </ul>
 </div>
 
-<!--内容区-->
+<!--åå®¹åº-->
 <link rel="stylesheet" href="css/admin-room.css"/>
 <div id="contentBox">
     <div class="room">
-        <h4>客房管理
-            <button class="btn btn-info btn-sm" id="add_btn">添加客房</button>
+        <h4>å®¢æ¿ç®¡ç
+            <button class="btn btn-info btn-sm" id="add_btn">æ·»å å®¢æ¿</button>
         </h4>
         <div>
             <table class="table table-bordered">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>房间类型</th>
-                    <th>房间号</th>
-                    <th>房间大小(m<sup>2</sup>)</th>
-                    <th>是否独卫</th>
-                    <th>价格(元)</th>
-                    <th>修改</th>
+                    <th>æ¿é´ç±»å</th>
+                    <th>æ¿é´å·</th>
+                    <th>æ¿é´å¤§å°(m<sup>2</sup>)</th>
+                    <th>æ¯å¦ç¬å«</th>
+                    <th>ä»·æ ¼(å)</th>
+                    <th>ä¿®æ¹</th>
                 </tr>
                 </thead>
                 <tbody id="room_body">
                  <tr>
                      <td>1</td>
-                     <td>商务型房间</td>
+                     <td>åå¡åæ¿é´</td>
                      <td>0123</td>
                      <td>32</td>
-                     <td>是</td>
+                     <td>æ¯</td>
                      <td>998</td>
                      <td>
-                         <button class="btn btn-warning btn-sm">修改</button>
+                         <button class="btn btn-warning btn-sm">ä¿®æ¹</button>
                      </td>
                  </tr>
 
@@ -69,7 +71,7 @@
             </table>
         </div>
 
-        <!--添加客房窗口-->
+        <!--æ·»å å®¢æ¿çªå£-->
         <div class="modal fade" id="addRoom">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -78,51 +80,51 @@
                                 data-dismiss="modal" aria-hidden="true">
                             &times;
                         </button>
-                        <h4>添加客房信息</h4>
+                        <h4>æ·»å å®¢æ¿ä¿¡æ¯</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" id="addRoom_form">
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">房间号码</label>
+                                <label class="col-xs-3 control-label">æ¿é´å·ç </label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_num" placeholder="请输入房间号码"
+                                    <input type="text" class="form-control" name="r_num" placeholder="è¯·è¾å¥æ¿é´å·ç "
                                            autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">房间大小</label>
+                                <label class="col-xs-3 control-label">æ¿é´å¤§å°</label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_size" placeholder="请输入房间大小，单位(平方米)"
+                                    <input type="text" class="form-control" name="r_size" placeholder="è¯·è¾å¥æ¿é´å¤§å°ï¼åä½(å¹³æ¹ç±³)"
                                            autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">客房类型</label>
+                                <label class="col-xs-3 control-label">å®¢æ¿ç±»å</label>
 
                                 <div class="col-xs-9">
                                     <select class="form-control" name="r_typeid">
-                                        <option value="0">商务型客房</option>
-                                        <option value="1">普通客房</option>
+                                        <option value="0">åå¡åå®¢æ¿</option>
+                                        <option value="1">æ®éå®¢æ¿</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">是否有独卫</label>
+                                <label class="col-xs-3 control-label">æ¯å¦æç¬å«</label>
 
                                 <div class="col-xs-9">
                                     <select class="form-control" name="r_isbath">
-                                        <option value="1">有</option>
-                                        <option value="0">没有</option>
+                                        <option value="1">æ</option>
+                                        <option value="0">æ²¡æ</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">客房价格</label>
+                                <label class="col-xs-3 control-label">å®¢æ¿ä»·æ ¼</label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_money" placeholder="请输入价格，单位(元)"
+                                    <input type="text" class="form-control" name="r_money" placeholder="è¯·è¾å¥ä»·æ ¼ï¼åä½(å)"
                                            autocomplete="off"/>
                                 </div>
                             </div>
@@ -130,16 +132,16 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="add_sub" data-loading-text="正在添加...">
-                            添加客房
+                        <button type="button" class="btn btn-default" data-dismiss="modal">åæ¶</button>
+                        <button type="button" class="btn btn-primary" id="add_sub" data-loading-text="æ­£å¨æ·»å ...">
+                            æ·»å å®¢æ¿
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--修改客房窗口-->
+        <!--ä¿®æ¹å®¢æ¿çªå£-->
         <div class="modal fade" id="updateRoom">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -148,51 +150,51 @@
                                 data-dismiss="modal" aria-hidden="true">
                             &times;
                         </button>
-                        <h4>修改客房信息</h4>
+                        <h4>ä¿®æ¹å®¢æ¿ä¿¡æ¯</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" id="updateRoom_form">
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">房间号码</label>
+                                <label class="col-xs-3 control-label">æ¿é´å·ç </label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_num" placeholder="请输入房间号码"
+                                    <input type="text" class="form-control" name="r_num" placeholder="è¯·è¾å¥æ¿é´å·ç "
                                            autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">房间大小</label>
+                                <label class="col-xs-3 control-label">æ¿é´å¤§å°</label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_size" placeholder="请输入房间大小，单位(平方米)"
+                                    <input type="text" class="form-control" name="r_size" placeholder="è¯·è¾å¥æ¿é´å¤§å°ï¼åä½(å¹³æ¹ç±³)"
                                            autocomplete="off"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">客房类型</label>
+                                <label class="col-xs-3 control-label">å®¢æ¿ç±»å</label>
 
                                 <div class="col-xs-9">
                                     <select class="form-control" name="r_typeid">
-                                        <option value="0">商务型客房</option>
-                                        <option value="1">普通客房</option>
+                                        <option value="0">åå¡åå®¢æ¿</option>
+                                        <option value="1">æ®éå®¢æ¿</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">是否有独卫</label>
+                                <label class="col-xs-3 control-label">æ¯å¦æç¬å«</label>
 
                                 <div class="col-xs-9">
                                     <select class="form-control" name="r_isbath">
-                                        <option value="1">有</option>
-                                        <option value="0">没有</option>
+                                        <option value="1">æ</option>
+                                        <option value="0">æ²¡æ</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-xs-3 control-label">客房价格</label>
+                                <label class="col-xs-3 control-label">å®¢æ¿ä»·æ ¼</label>
 
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" name="r_money" placeholder="请输入价格，单位(元)"
+                                    <input type="text" class="form-control" name="r_money" placeholder="è¯·è¾å¥ä»·æ ¼ï¼åä½(å)"
                                            autocomplete="off"/>
                                 </div>
                             </div>
@@ -201,17 +203,17 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" id="deleteRoom_sub" data-loading-text="正在删除...">
-                            删除
+                        <button type="button" class="btn btn-danger" id="deleteRoom_sub" data-loading-text="æ­£å¨å é¤...">
+                            å é¤
                         </button>
-                        <button type="button" class="btn btn-primary" id="updateRoom_sub" data-loading-text="正在修改...">
-                           修改房间
+                        <button type="button" class="btn btn-primary" id="updateRoom_sub" data-loading-text="æ­£å¨ä¿®æ¹...">
+                           ä¿®æ¹æ¿é´
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 删除确认弹窗-->
+        <!-- å é¤ç¡®è®¤å¼¹çª-->
         <div class="modal fade" id="deleteConform">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -220,15 +222,15 @@
                                 data-dismiss="modal" aria-hidden="true">
                             &times;
                         </button>
-                        <h4>确定删除吗？</h4>
+                        <h4>ç¡®å®å é¤åï¼</h4>
                     </div>
                     <div class="modal-body">
-                        删除客房信息后将不能恢复，你确定要删除？
+                        å é¤å®¢æ¿ä¿¡æ¯åå°ä¸è½æ¢å¤ï¼ä½ ç¡®å®è¦å é¤ï¼
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-danger" id="deleteSure_sub" data-loading-text="正在删除...">
-                            删除
+                        <button type="button" class="btn btn-default" data-dismiss="modal">åæ¶</button>
+                        <button type="button" class="btn btn-danger" id="deleteSure_sub" data-loading-text="æ­£å¨å é¤...">
+                            å é¤
                         </button>
                     </div>
                 </div>
