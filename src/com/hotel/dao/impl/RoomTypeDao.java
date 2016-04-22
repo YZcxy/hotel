@@ -28,7 +28,7 @@ public class RoomTypeDao implements IRoomTypeDao {
 		}finally{
 			MyBatisUtil.closeSession(session);
 		}
-		return false;
+		return isSuccess;
 	}
 	@Override
 	public RoomType queryRoomType(String rt_name) {
