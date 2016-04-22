@@ -118,6 +118,7 @@ function writeDate() {
 		d = d.length == 1 ? "0" + d : d;
 		var _date = year + "." + m + "." + d;
 		$(".choose_room .book_date span").html(_date);
+		_date = _date.replace(/\./g, "-");
 		bookData.date = _date;
 		//查询可选的房间号
 		$.post("load_select_room.do", bookData, function(data) {

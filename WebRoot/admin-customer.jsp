@@ -93,7 +93,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-xs-3 control-label">真实姓名</label>
+										<label class="col-xs-3 control-label">手机号码</label>
 
 										<div class="col-xs-9">
 											<input type="text" class="form-control" name="u_tel" placeholder="请输入手机号码" autocomplete="off" />
