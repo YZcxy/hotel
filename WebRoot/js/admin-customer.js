@@ -177,6 +177,7 @@ $(function() {
 			date: $("#book_date").val()
 		}, function(data) {
 			var box = $("#choose_room");
+			box.html("");
 			for (var i in data) {
 				var span = $("<span money='" + data[i].r_money + "'>" + data[i].r_num + "</span>");
 				box.append(span);

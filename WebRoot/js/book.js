@@ -131,6 +131,7 @@ function writeDate() {
 		//查询可选的房间号
 		$.post("load_select_room.do", bookData, function(data) {
 			var box = $("#book_room .choose_room .room_num");
+			box.html("");
 			for (var i in data) {
 				var span = $("<span money='" + data[i].r_money + "'>" + data[i].r_num + "</span>");
 				box.append(span);
@@ -144,7 +145,7 @@ function writeDate() {
 				for (var i in span) {
 					if (span[i].className == "active") {
 						tmp.push(span[i].innerHTML);
-						var pri = Number((span[i]).attr("money"));
+						var pri = Number($(span[i]).attr("money"));
 						if (isNaN(pri)) {
 							pri = 0;
 						}

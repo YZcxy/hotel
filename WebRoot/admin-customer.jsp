@@ -198,7 +198,7 @@
 									<div class="form-group">
 										<label class="col-xs-3 control-label">选择房间号</label>
 										<div class="col-xs-9">
-											<div class="form-control" id="choose_room">
+											<div id="choose_room">
 												<!--<span>123</span>
 												<span class="active">456</span><span>123</span>-->
 											</div>

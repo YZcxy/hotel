@@ -74,7 +74,8 @@ body {
   font-size: 14px;
   margin-right: 3px;
   cursor: pointer;
-  line-height: 32px;
+  line-height: 30px;
+  word-break: break-word;
 }
 .room #choose_room span.active {
   color: #fff;

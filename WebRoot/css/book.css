@@ -191,6 +191,8 @@ body {
   font-size: 14px;
   color: #999;
   margin-right: 3px;
+  line-height: 30px;
+  word-break: break-word;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
