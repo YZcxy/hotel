@@ -65,9 +65,9 @@ public class UserController {
 	}
 	
 	//拦截注销请求
-	@RequestMapping("user_logout")
+	@RequestMapping("eixt_user")
 	@ResponseBody
-	public User user_logout(HttpSession session,HttpServletRequest req,HttpServletResponse res){	
+	public User eixt_user(HttpSession session,HttpServletRequest req,HttpServletResponse res){	
 		session.invalidate();
 		try {
 			req.getRequestDispatcher("index.html?login=true").forward(req,
@@ -131,6 +131,75 @@ public class UserController {
 		map.put("success", false);
 		if(UserService.deleteUser(user)){
 			//成功删除
+			map.put("success", true);
+		}else{
+			//服务器的原因导致无法注册
+			map.put("reason", "请不要为难服务器！！");
+			map.put("success", false);
+		}
+		
+		return map;
+	}
+	
+	//拦截加载所有管理员请求
+	@RequestMapping("load_all_admin")
+	@ResponseBody
+	public List<Admin> load_all_admin(){	
+		List<Admin> list = UserService.loadAllAdmin();
+		
+		return list;
+	}
+	
+	//拦截管理员注册请求
+	@RequestMapping("add_admin")
+	@ResponseBody
+	public Map add_admin(Admin admin){	
+		Map map = new HashMap();
+		map.put("success", false);
+		//
+		if(UserService.adRegisterCheck(admin)){
+			if(UserService.adRegister(admin)){
+				//成功注册
+				map.put("success", true);
+			}else{
+				//服务器的原因导致无法注册
+				map.put("reason", "请不要为难服务器！！");
+				map.put("success", false);
+			}
+		}else{
+			
+			map.put("reason","该管理员已经被注册");
+			map.put("success", false);
+		}	
+		return map;
+	}
+	
+	//拦截根据Id删除管理员信息请求
+	@RequestMapping("delete_admin")
+	@ResponseBody
+	public Map delete_admin(Admin admin){	
+		Map map = new HashMap();
+		map.put("success", false);
+		if(UserService.deleteAdmin(admin)){
+			//成功删除
+			map.put("success", true);
+		}else{
+			//服务器的原因导致无法注册
+			map.put("reason", "请不要为难服务器！！");
+			map.put("success", false);
+		}
+		
+		return map;
+	}
+	
+	//拦截根据id修改管理员信息请求
+	@RequestMapping("update_admin")
+	@ResponseBody
+	public Map update_admin(Admin admin){	
+		Map map = new HashMap();
+		map.put("success", false);
+		if(UserService.updateAdmin(admin)){
+			//成功修改
 			map.put("success", true);
 		}else{
 			//服务器的原因导致无法注册

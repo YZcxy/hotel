@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			return true;
 		}
 		
-		if (url.indexOf("logout.do") >= 0) {
+		if (url.indexOf("eixt_user.do") >= 0) {
 			// 如果进行注销提交，放行
 			return true;
 		}

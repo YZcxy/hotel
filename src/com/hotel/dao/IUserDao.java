@@ -19,4 +19,13 @@ public interface IUserDao {
 	public boolean updateUser(User user);
 	
 	public boolean deleteUser(int u_id);
+	
+	public List<Admin> qAllAdmin();
+	
+	public boolean addAdmin(Admin admin);
+	
+	public boolean deleteAdmin(int ad_id);
+	
+	public boolean updateAdmin(Admin admin);
+	
 }

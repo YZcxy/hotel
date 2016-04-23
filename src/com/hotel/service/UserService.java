@@ -12,7 +12,6 @@ import com.hotel.util.MD5Util;
 public class UserService {
 	
 	private static IUserDao u = DAOFactory.getUserDao();
-	private static String reason = null;
 
 	
 	//验证用户名是否已经被注册
@@ -83,6 +82,54 @@ public class UserService {
 			return false;
 		}
 		boolean flag = u.deleteUser(user.getU_id());
+		
+		return flag;
+	}
+	
+	//返回查到的admin数组
+	public static List<Admin> loadAllAdmin(){
+		List<Admin> list = u.qAllAdmin();
+		return list;
+	}
+	
+	//验证admin用户名是否已经被注册
+	public static boolean adRegisterCheck(Admin admin) {
+		Admin mes = u.qAdByUsername(admin.getAd_username());
+		if(mes == null){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	//对admin进行注册
+	public static boolean adRegister(Admin admin) {
+		if(admin.getAd_password() == null){
+			return false;
+		}
+		Date datatime = new Date(System.currentTimeMillis());
+		admin.setAd_date(datatime);
+		admin.setAd_password(MD5Util.MD5(admin.getAd_password()));
+		boolean flag = u.addAdmin(admin);
+		return flag;
+	}
+	
+	//返回是否成功删除
+	public static boolean deleteAdmin(Admin admin){
+		if(admin.getAd_id() == 0){
+			return false;
+		}
+		boolean flag = u.deleteUser(admin.getAd_id());
+		
+		return flag;
+	}
+	
+	//返回是否修改成功
+	public static boolean updateAdmin(Admin admin){
+		if(admin.getAd_id() == 0){
+			return false;
+		}
+		boolean flag = u.updateAdmin(admin);
 		
 		return flag;
 	}
