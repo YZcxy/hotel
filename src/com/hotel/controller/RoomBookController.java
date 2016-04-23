@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hotel.po.Room;
+import com.hotel.po.RoomBook;
 import com.hotel.po.RoomBookCustom;
 import com.hotel.service.RoomBookService;
 import com.hotel.service.RoomService;
@@ -32,5 +33,15 @@ public class RoomBookController {
 			map.put("success", false);
 		}
 		return map;
+	}
+	@RequestMapping("load_all_book")
+	@ResponseBody
+	public List<RoomBook> loadAllBook(){
+		return RoomBookService.loadAllBook();
+	}
+	@RequestMapping("load_book_info")
+	@ResponseBody
+	public List<RoomBook> loadBookInfo(String u_username){
+		return RoomBookService.loadBookInfo(u_username);
 	}
 }

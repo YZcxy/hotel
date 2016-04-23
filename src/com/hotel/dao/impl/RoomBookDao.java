@@ -51,5 +51,38 @@ public class RoomBookDao implements IRoomBookDao {
 		}
 		return isSuccess;
 	}
+
+	@Override
+	public List<RoomBook> getAllBook() {
+		SqlSession session = null;
+		List<RoomBook> list = new ArrayList<RoomBook>();
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(RoomBook.class.getName()+".getAllBook");
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
+
+	@Override
+	public List<RoomBook> getUserBook(String u_username) {
+		SqlSession session = null;
+		List<RoomBook> list = new ArrayList<RoomBook>();
+		try {
+			session = MyBatisUtil.createSession();
+			System.out.println(u_username);
+			list = session.selectList(RoomBook.class.getName()+".getUserBook",u_username);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
 	
 }

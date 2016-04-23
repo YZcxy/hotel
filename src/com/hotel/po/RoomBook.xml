@@ -21,7 +21,7 @@
 		VALUES(
 			(SELECT `user`.u_id
 				FROM `user`
-				WHERE `user`.u_name=#{username}
+				WHERE `user`.u_username=#{username}
 				),
 				(
 				SELECT room.r_id
@@ -31,4 +31,18 @@
 
 		)
 	</insert>
+	<select id="getAllBook" resultType="RoomBookCustom">
+		SELECT *
+		FROM room,room_book,`user`
+		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid
+		order by rb_id
+	</select>
+	<select id="getUserBook" parameterType="String" resultType="RoomBook">
+		SELECT * FROM room_book
+		WHERE room_book.rb_uid=(
+			SELECT u_id
+			FROM `user`
+			WHERE `user`.u_username=#{u_username}
+		)
+	</select>
 </mapper>

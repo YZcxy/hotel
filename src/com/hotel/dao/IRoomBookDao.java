@@ -3,6 +3,7 @@ package com.hotel.dao;
 import java.util.List;
 
 import com.hotel.po.Room;
+import com.hotel.po.RoomBook;
 import com.hotel.po.RoomBookCustom;
 
 
@@ -10,4 +11,6 @@ import com.hotel.po.RoomBookCustom;
 public interface IRoomBookDao {
 	List<Room> loadSelectRoom(RoomBookCustom rbc);
 	boolean addBook(RoomBookCustom rbc);
+	List<RoomBook> getAllBook();
+	List<RoomBook> getUserBook(String u_username);
 }

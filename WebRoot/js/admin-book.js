@@ -51,10 +51,10 @@ function loadBook() {
 		for (var i in data) {
 			var tr = $("<tr></tr>");
 			var td1 = $("<td>" + data[i].rb_id + "</td>");
-			var td2 = $("<td r_typeid='" + data[i].u_username + "'>" + data[i].rt_name + "</td>");
+			var td2 = $("<td>" + data[i].u_username + "</td>");
 			var td3 = $("<td>" + data[i].u_name + "</td>");
 			var td4 = $("<td>" + data[i].r_num + "</td>");
-			var td5 = $("<td>" + data[i].rb_date + "</td>");
+			var td5 = $("<td>" + data[i].rb_bookdate + "</td>");
 			var td6 = $('<td><button class="btn btn-info btn-sm">入住</button><button class="btn btn-danger btn-sm">删除</button></td>');
 			tr.append(td1, td2, td3, td4, td5, td6);
 			$("#room_body").append(tr);
