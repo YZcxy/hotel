@@ -17,6 +17,18 @@
 				)
 	</select>
 	<insert id="addBook" parameterType="RoomBookCustom">
-		
+		INSERT INTO room_book (rb_uid,rb_rid,rb_bookdate)
+		VALUES(
+			(SELECT `user`.u_id
+				FROM `user`
+				WHERE `user`.u_name=#{username}
+				),
+				(
+				SELECT room.r_id
+				FROM room
+				WHERE room.r_num=#{num}
+				),#{date}
+
+		)
 	</insert>
 </mapper>
