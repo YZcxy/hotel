@@ -39,12 +39,12 @@ function loadBookInfo() {
 			var td2 = $("<td>" + data[i].rt_name + "</td>");
 			var td3 = $("<td>" + data[i].r_num + "</td>");
 			var td4 = $("<td>" + data[i].r_size + "</td>");
-			var td5 = $("<td>" + data[i].r_isbath == 1 ? "有" : "没有" + "</td>");
+			var td5 = $("<td>" + (data[i].r_isbath == 1 ? "有" : "没有") + "</td>");
 			var td6 = $("<td>" + data[i].r_money + "</td>");
 			var td7 = $("<td>" + data[i].rb_bookdate + "</td>");
 			var td8 = $('<td><button class="btn btn-danger btn-sm">退订</button></td>');
 			tr.append(td1, td2, td3, td4, td5, td6, td7, td8);
-			$("#room_body").append(tr);
+			$("#book_body").append(tr);
 		}
 	}, "json");
 }
