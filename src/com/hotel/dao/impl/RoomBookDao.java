@@ -74,7 +74,6 @@ public class RoomBookDao implements IRoomBookDao {
 		List<RoomBook> list = new ArrayList<RoomBook>();
 		try {
 			session = MyBatisUtil.createSession();
-			System.out.println(u_username);
 			list = session.selectList(RoomBook.class.getName()+".getUserBook",u_username);
 			session.commit();
 		} catch (Exception e) {

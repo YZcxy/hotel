@@ -9,8 +9,11 @@ public class RoomBookCustom{
 	private String u_username;
 	private String u_name;
 	private String r_num;
+	private String rt_name;
 	private String rb_bookdate;
-	
+	private String r_size;
+	private int r_isbath;
+	private float r_money;
 	public String getType() {
 		return type;
 	}
@@ -34,6 +37,12 @@ public class RoomBookCustom{
 	}
 	public void setNum(String num) {
 		this.num = num;
+	}
+	public String getRt_name() {
+		return rt_name;
+	}
+	public void setRt_name(String rt_name) {
+		this.rt_name = rt_name;
 	}
 	public int getRb_id() {
 		return rb_id;
@@ -64,6 +73,24 @@ public class RoomBookCustom{
 	}
 	public void setRb_bookdate(String rb_bookdate) {
 		this.rb_bookdate = rb_bookdate;
+	}
+	public String getR_size() {
+		return r_size;
+	}
+	public void setR_size(String r_size) {
+		this.r_size = r_size;
+	}
+	public int getR_isbath() {
+		return r_isbath;
+	}
+	public void setR_isbath(int r_isbath) {
+		this.r_isbath = r_isbath;
+	}
+	public float getR_money() {
+		return r_money;
+	}
+	public void setR_money(float r_money) {
+		this.r_money = r_money;
 	}
 	
 }

@@ -30,7 +30,7 @@ $(function() {
 //加载预定信息
 function loadBookInfo() {
 	$.get("load_book_info.do", {
-		u_username: $("u_username").val()
+		u_username: $.cookie("u_username")
 	}, function(data) {
 		$("#book_body").html("");
 		for (var i in data) {

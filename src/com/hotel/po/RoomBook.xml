@@ -37,12 +37,13 @@
 		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid
 		order by rb_id
 	</select>
-	<select id="getUserBook" parameterType="String" resultType="RoomBook">
-		SELECT * FROM room_book
-		WHERE room_book.rb_uid=(
-			SELECT u_id
-			FROM `user`
-			WHERE `user`.u_username=#{u_username}
-		)
+	<select id="getUserBook" parameterType="String" resultType="RoomBookCustom">
+		
+SELECT room_book.rb_id,room_type.rt_name,room.r_num,room.r_size,room.r_isbath,room.r_money,room_book.rb_bookdate
+FROM (SELECT *
+		FROM `user`
+		WHERE `user`.u_username=#{username}) AS u,room_book,room,room_type
+WHERE u.u_id=room_book.rb_uid AND room.r_id=room_book.rb_rid AND room.r_typeid=room_type.rt_id
+		
 	</select>
 </mapper>
