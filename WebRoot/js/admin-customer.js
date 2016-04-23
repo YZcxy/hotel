@@ -125,11 +125,14 @@ $(function() {
 		$("#book_sub")[0].disabled = true;
 		$("#inroom_sub")[0].disabled = true;
 	});
+	
+	//类型 日期更改
+	$("#book_type,#book_date").change(loadRoom);
 
 	//时间选择
 	$("#book_date").datetimepicker({
 		format: 'yyyy-mm-dd',
-		autoclose: false,
+		autoclose: true,
 		pickerPosition: 'bottom-left',
 		startDate: getToday(),
 		endDate: getNextYear(),
@@ -191,7 +194,7 @@ $(function() {
 				for (var i in span) {
 					if (span[i].className == "active") {
 						tmp.push(span[i].innerHTML);
-						var pri = Number((span[i]).attr("money"));
+						var pri = Number($(span[i]).attr("money"));
 						if (isNaN(pri)) {
 							pri = 0;
 						}
@@ -231,6 +234,7 @@ $(function() {
 			btn.button("reset");
 			$("#inroom_sub")[0].disabled = false;
 			if (data.success == true) {
+				loadRoom();
 				setLog($("#bookRoom_form"), "alert-success", "预定成功");
 			} else {
 				setLog($("#bookRoom_form"), "alert-danger", "预定失败");

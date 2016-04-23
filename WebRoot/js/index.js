@@ -17,7 +17,7 @@ $(function() {
 	//时间选择
 	$("#book_date").datetimepicker({
 		format: 'yyyy-mm-dd',
-		autoclose: false,
+		autoclose: true,
 		pickerPosition: 'bottom-left',
 		startDate: getToday(),
 		endDate: getNextYear(),

@@ -28,15 +28,16 @@ $(function() {
 		$(this).addClass("active");
 		$(".choose_room .book_type span").html($(this).find("a").html());
 		bookData.type = $(this).find("a").html();
+		queryRoom();
 	});
 });
 
 //从主页过来
-$(function(){
+$(function() {
 	var sear = location.search;
-	var type = sear.substring(6,sear.indexOf("&"));
-	var date = sear.substring(sear.indexOf("&date=")+6);
-	
+	var type = sear.substring(6, sear.indexOf("&"));
+	var date = sear.substring(sear.indexOf("&date=") + 6);
+
 });
 
 //选择月份
@@ -129,38 +130,7 @@ function writeDate() {
 		_date = _date.replace(/\./g, "-");
 		bookData.date = _date;
 		//查询可选的房间号
-		$.post("load_select_room.do", bookData, function(data) {
-			var box = $("#book_room .choose_room .room_num");
-			box.html("");
-			for (var i in data) {
-				var span = $("<span money='" + data[i].r_money + "'>" + data[i].r_num + "</span>");
-				box.append(span);
-			}
-			box.off("click");
-			box.on("click", "span", function() {
-				$(this).toggleClass("active");
-				var span = box.find("span");
-				var tmp = [];
-				var price = 0;
-				for (var i in span) {
-					if (span[i].className == "active") {
-						tmp.push(span[i].innerHTML);
-						var pri = Number($(span[i]).attr("money"));
-						if (isNaN(pri)) {
-							pri = 0;
-						}
-						price += pri;
-					}
-				}
-				bookData.num = tmp.toString();
-				$(".choose_room .price span").html(price);
-				if (tmp.length > 0) {
-					$("#book_sub")[0].disabled = false;
-				} else {
-					$("#book_sub")[0].disabled = true;
-				}
-			});
-		}, 'json');
+		queryRoom();
 	});
 }
 
@@ -177,6 +147,7 @@ $(function() {
 		$.post("add_book.do", bookData, function(data) {
 			btn.button("reset");
 			if (data.success == true) {
+				queryRoom();
 				setLog($("#book_log"), "alert-success", "预定成功");
 			} else {
 				setLog($("#book_log"), "alert-danger", "预定失败");
@@ -184,3 +155,39 @@ $(function() {
 		}, 'json');
 	});
 });
+
+//查询可以选择的房间号
+function queryRoom() {
+	$.post("load_select_room.do", bookData, function(data) {
+		var box = $("#book_room .choose_room .room_num");
+		box.html("");
+		for (var i in data) {
+			var span = $("<span money='" + data[i].r_money + "'>" + data[i].r_num + "</span>");
+			box.append(span);
+		}
+		box.off("click");
+		box.on("click", "span", function() {
+			$(this).toggleClass("active");
+			var span = box.find("span");
+			var tmp = [];
+			var price = 0;
+			for (var i in span) {
+				if (span[i].className == "active") {
+					tmp.push(span[i].innerHTML);
+					var pri = Number($(span[i]).attr("money"));
+					if (isNaN(pri)) {
+						pri = 0;
+					}
+					price += pri;
+				}
+			}
+			bookData.num = tmp.toString();
+			$(".choose_room .price span").html(price);
+			if (tmp.length > 0) {
+				$("#book_sub")[0].disabled = false;
+			} else {
+				$("#book_sub")[0].disabled = true;
+			}
+		});
+	}, 'json');
+}
