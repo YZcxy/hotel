@@ -34,21 +34,7 @@
 								<th>修改</th>
 							</tr>
 						</thead>
-						<tbody id="customer_body">
-							<tr>
-								<td>1</td>
-								<td>chen</td>
-								<td>王二</td>
-								<td>50123456431452341564101</td>
-								<td>12348645345</td>
-								<td>2013-12-12 18:11:12</td>
-								<td>
-									<button class="btn btn-info btn-sm">订房间</button>
-									<button class="btn btn-warning btn-sm">修改</button>
-								</td>
-							</tr>
-
-						</tbody>
+						<tbody id="customer_body"></tbody>
 					</table>
 				</div>
 
@@ -182,10 +168,7 @@
 										<label class="col-xs-3 control-label">房间类型</label>
 
 										<div class="col-xs-9">
-											<select class="form-control" id="book_type">
-                                    	<!--<option value="">商务酒店</option>
-                                    	<option value="">商务酒店22</option>-->
-                                    </select>
+											<select class="form-control" id="book_type"></select>
 										</div>
 									</div>
 									<div class="form-group">
@@ -198,10 +181,7 @@
 									<div class="form-group">
 										<label class="col-xs-3 control-label">选择房间号</label>
 										<div class="col-xs-9">
-											<div id="choose_room">
-												<!--<span>123</span>
-												<span class="active">456</span><span>123</span>-->
-											</div>
+											<div id="choose_room"></div>
 										</div>
 									</div>
 									<div class="form-group">

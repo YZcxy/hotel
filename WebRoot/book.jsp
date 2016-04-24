@@ -19,13 +19,7 @@
 			<!--预订房间-->
 			<div id="book_room">
 				<!--选择房间类型-->
-				<ul class="choose_type list-unstyled">
-					<!--<li class="active"><a href="javascript:;">商务酒店</a></li>
-					<li><a href="javascript:;">商务酒店</a></li>
-					<li><a href="javascript:;">商务酒店</a></li>
-					<li><a href="javascript:;">商务酒店商务酒店商务酒店</a></li>
-					<li><a href="javascript:;">商务酒店</a></li>-->
-				</ul>
+				<ul class="choose_type list-unstyled"></ul>
 				<!--选择预定时间-->
 				<div class="choose_date">
 					<nav></nav>
@@ -112,10 +106,7 @@
 						<p class="book_date">预订时间：<span></span>
 						</p>
 						<h5>选择房间号</h5>
-						<p class="room_num">
-							<!--<span class="">123</span>
-							<span class="active">123</span>-->
-						</p>
+						<p class="room_num"></p>
 						<p class="price">总价：<span>0</span></p>
 						<button class="btn btn-primary" type="button" id="book_sub" data-loading-text="正在预订...">确定预订</button>
 						<div id="book_log"></div>

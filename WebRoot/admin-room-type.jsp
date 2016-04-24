@@ -27,16 +27,7 @@
                     <th>修改</th>
                 </tr>
                 </thead>
-                <tbody id="room_type_body">
-               <!-- <tr>
-                    <td>1</td>
-                    <td>商务型房间</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm">修改</button>
-                    </td>
-                </tr>-->
-
-                </tbody>
+                <tbody id="room_type_body"></tbody>
             </table>
         </div>
         <!--添加类型窗口-->

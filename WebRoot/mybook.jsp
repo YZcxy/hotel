@@ -33,21 +33,7 @@
 							<th>退订</th>
 						</tr>
 					</thead>
-					<tbody id="book_body">
-						<tr>
-							<td>1</td>
-							<td>AAA</td>
-							<td>801</td>
-							<td>56</td>
-							<td>有</td>
-							<td>580</td>
-							<td>2016-12-02</td>
-							<td>
-								<button class="btn btn-danger btn-sm">退订</button>
-							</td>
-						</tr>
-		
-					</tbody>
+					<tbody id="book_body"></tbody>
 				</table>
 			</div>
         </div>
