@@ -36,7 +36,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 			return true;
 		}
 		
-
+		if (url.indexOf("load_select_room.do") >= 0) {
+			// 如果进行注册提交，放行
+			return true;
+		}
+		
 
 		HttpSession session = request.getSession();
 		// 从session中取出用户身份信息
@@ -47,7 +51,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		}
 
 		// 执行这里表示用户身份需要认证，跳转登陆页面
-		request.getRequestDispatcher("index.html?login=true").forward(request,
+		request.getRequestDispatcher("index.jsp#login=true").forward(request,
 				response);
 
 		return false;
