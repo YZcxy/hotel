@@ -41,6 +41,11 @@ public class RoomBookController {
 	public List<RoomBook> loadAllBook(){
 		return RoomBookService.loadAllBook();
 	}
+	@RequestMapping("load_all_inroom")
+	@ResponseBody
+	public List<RoomBook> loadAllInroom(){
+		return RoomBookService.loadAllInroom();
+	}
 	@RequestMapping("load_book_info")
 	@ResponseBody
 	public List<RoomBook> loadBookInfo(String u_username){
@@ -69,5 +74,16 @@ public class RoomBookController {
 		}
 		return map;
 	}
-
+	
+	@RequestMapping("change_book_inroom")
+	@ResponseBody
+	public Map changeBookInroom(int rb_id){
+		Map map = new HashMap();
+		if(RoomBookService.changeBookInroom(rb_id)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+		}
+		return map;
+	}
 }

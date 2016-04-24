@@ -32,7 +32,7 @@
 		)
 	</insert>
 	<insert id="addInroom" parameterType="RoomBookCustom">
-	INSERT INTO room_book (rb_uid,rb_rid,rb_indate)
+	INSERT INTO room_book (rb_uid,rb_rid,rb_indate,rb_status)
 		VALUES(
 			(SELECT `user`.u_id
 				FROM `user`
@@ -42,7 +42,7 @@
 				SELECT room.r_id
 				FROM room
 				WHERE room.r_num=#{num}
-				),#{date}
+				),#{date},'2'
 
 		)
 	</insert>
@@ -52,13 +52,19 @@
 		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid
 		order by rb_id
 	</select>
+	<select id="loadAllInroom" resultType="RoomBookCustom">
+		SELECT *
+		FROM room,room_book,`user`
+		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid AND room_book.rb_status=2
+		order by rb_id
+	</select>
 	<select id="getUserBook" parameterType="String" resultType="RoomBookCustom">
 		
-SELECT room_book.rb_id,room_type.rt_name,room.r_num,room.r_size,room.r_isbath,room.r_money,room_book.rb_bookdate
-FROM (SELECT *
+	SELECT room_book.rb_id,room_type.rt_name,room.r_num,room.r_size,room.r_isbath,room.r_money,room_book.rb_bookdate
+	FROM (SELECT *
 		FROM `user`
 		WHERE `user`.u_username=#{username}) AS u,room_book,room,room_type
-WHERE u.u_id=room_book.rb_uid AND room.r_id=room_book.rb_rid AND room.r_typeid=room_type.rt_id
+	WHERE u.u_id=room_book.rb_uid AND room.r_id=room_book.rb_rid AND room.r_typeid=room_type.rt_id
 		order by rb_id
 	</select>
 	<delete id="deleteBook" parameterType="int">
@@ -66,4 +72,10 @@ WHERE u.u_id=room_book.rb_uid AND room.r_id=room_book.rb_rid AND room.r_typeid=r
 		FROM room_book
 		WHERE room_book.rb_id=#{rb_id}
 	</delete>
+	<update id="changeBookInroom" parameterType="int">
+	UPDATE room_book
+	SET room_book.rb_status=2
+	WHERE room_book.rb_id=#{rb_id}
+	<!-- room_book.rb_indate='2016-04-5', -->
+	</update>
 </mapper>
