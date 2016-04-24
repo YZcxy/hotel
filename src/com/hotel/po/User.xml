@@ -21,12 +21,12 @@
 	</select>
 	
 	<update id="updateUser" parameterType="User">
-		UPDATE user SET
-		<if test="u_username!=null">u_username=#{u_username}</if>
-		<if test="u_password!=null">u_password=#{u_password}</if>
-		<if test="u_name!=null">u_name=#{u_name}</if>
-		<if test="u_idcard!=null">u_idcard=#{u_idcard}</if>
-		<if test="u_tel!=null">u_tel=#{u_tel}</if>
+		UPDATE user SET u_id = #{u_id}
+		<if test="u_username!=null">,u_username=#{u_username}</if>
+		<if test="u_password!=null">,u_password=#{u_password}</if>
+		<if test="u_name!=null">,u_name=#{u_name}</if>
+		<if test="u_idcard!=null">,u_idcard=#{u_idcard}</if>
+		<if test="u_tel!=null">,u_tel=#{u_tel}</if>
 		WHERE u_id = #{u_id}
 	</update>
 	
@@ -48,12 +48,12 @@
 	</delete>
 	
 	<update id="updateAdmin" parameterType="Admin">
-		UPDATE admin SET
-		<if test="ad_username!=null">ad_username=#{ad_username}</if>
-		<if test="ad_password!=null">ad_password=#{ad_password}</if>
-		<if test="ad_name!=null">ad_name=#{ad_name}</if>
-		<if test="ad_tel!=null">ad_tel=#{ad_tel}</if>
-		<if test="ad_pow!=null">ad_pow=#{ad_pow}</if>
+		UPDATE admin SET ad_id = #{ad_id}
+		<if test="ad_username!=null">,ad_username=#{ad_username}</if>
+		<if test="ad_password!=null">,ad_password=#{ad_password}</if>
+		<if test="ad_name!=null">,ad_name=#{ad_name}</if>
+		<if test="ad_tel!=null">,ad_tel=#{ad_tel}</if>
+		<if test="ad_pow!=null">,ad_pow=#{ad_pow}</if>
 		WHERE ad_id = #{ad_id}
 	</update>
 	
