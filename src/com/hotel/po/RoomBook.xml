@@ -49,7 +49,7 @@
 	<select id="getAllBook" resultType="RoomBookCustom">
 		SELECT *
 		FROM room,room_book,`user`
-		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid
+		WHERE room.r_id=room_book.rb_rid AND `user`.u_id=room_book.rb_uid AND room_book.rb_status=1
 		order by rb_id
 	</select>
 	<select id="loadAllInroom" resultType="RoomBookCustom">
@@ -74,7 +74,7 @@
 	</delete>
 	<update id="changeBookInroom" parameterType="int">
 	UPDATE room_book
-	SET room_book.rb_status=2
+	SET room_book.rb_indate= NOW(),room_book.rb_status=2
 	WHERE room_book.rb_id=#{rb_id}
 	<!-- room_book.rb_indate='2016-04-5', -->
 	</update>
