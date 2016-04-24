@@ -123,10 +123,14 @@ public class RoomBookDao implements IRoomBookDao {
 		SqlSession session = null;
 		boolean isSuccess = false;
 		//获取多个房间号
+		//获取多个房间号
+		String[] num = rbc.getNum().split(",");
 		try {
 			session = MyBatisUtil.createSession();
-			
-			session.insert(RoomBook.class.getName()+".addInroom",rbc);
+			for(int i=0;i<num.length;i++){
+				rbc.setNum(num[i]);
+				session.insert(RoomBook.class.getName()+".addInroom",rbc);
+			}
 			session.commit();
 			isSuccess = true;
 		} catch (Exception e) {
