@@ -54,7 +54,8 @@ public class UserController {
 		if (UserService.loginCheck(user)) {
 			// 保存session，保存姓名和权限
 			session.setAttribute("username", user.getU_username());
-			session.setAttribute("pow", null);
+			int pow = 0;
+			session.setAttribute("pow", pow);
 			map.put("success", true);
 		} else {
 			map.put("reason", "用户名或密码错误");
