@@ -58,12 +58,3 @@ $(function() {
 		return y + "-" + m + "-" + d;
 	}
 });
-
-//判断是否打开登录窗口
-$(function() {
-	var url = location.href;
-	if (url.indexOf("#login=true") > 0) {
-		$("#loginBox").modal();
-		history.pushState({}, document.title, "./");
-	}
-});

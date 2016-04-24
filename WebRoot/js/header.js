@@ -3,7 +3,7 @@ $(function() {
 	if ($.cookie("u_username")) {
 		$("#_login_info").html('<li>欢迎您，' + $.cookie("u_username") + '</li><li><a href="mybook.jsp" class="btn btn-info">我的预定</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
 		$("#_exit").click(function() {
-			$.post("eixt_user.do", function() {
+			$.post("exit_user.do", function() {
 				$.removeCookie("u_username");
 				$.removeCookie("ad_username");
 				location.reload();
@@ -12,7 +12,7 @@ $(function() {
 	} else if ($.cookie("ad_username")) {
 		$("#_login_info").html('<li>欢迎您，'+$.cookie("ad_username")+'</li><li><a href="admin-room-type.jsp" class="btn btn-info">后台管理</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
 		$("#_exit").click(function() {
-			$.post("eixt_user.do", function() {
+			$.post("exit_user.do", function() {
 				$.removeCookie("u_username");
 				$.removeCookie("ad_username");
 				location.reload();
@@ -153,6 +153,15 @@ $(function() {
 	});
 });
 
+//判断是否打开登录窗口
+$(function() {
+	var url = location.href;
+	if (url.indexOf("#login=true") > 0) {
+		$("#loginBox").modal();
+		history.pushState({}, document.title, "./");
+	}
+});
+
 //提示消息
 function setLog(obj, type, text) {
 	if (!(obj instanceof jQuery)) {
@@ -169,4 +178,27 @@ function setLog(obj, type, text) {
 	div.append(a, p);
 
 	obj.before(div);
+}
+
+//格式化日期
+function formatDate(t) {
+	var _date = new Date(t);
+	var y = _date.getFullYear();
+	var m = Number(_date.getMonth()) + 1;
+	var d = _date.getDate();
+	var h = _date.getHours();
+	var _m = _date.getMinutes();
+	y = getFormat(y);
+	m = getFormat(m);
+	d = getFormat(d);
+	h = getFormat(h);
+	_m = getFormat(-m);
+	return y + "-" + m + "-" + d;
+	function getFormat(str) {
+		str = str.toString();
+		if (str.length == 1) {
+			str = "0" + str;
+		}
+		return str;
+	}
 }

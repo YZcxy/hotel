@@ -23,6 +23,7 @@ $(function() {
 			setLog(f);
 			var d = $(f).serialize();
 			$.post("add_admin.do", d, function(data) {
+				btn.button("reset");
 				if (data.success == true) {
 					setLog(f, 'alert-success', '添加成功');
 					f.reset();
@@ -30,7 +31,6 @@ $(function() {
 				} else {
 					setLog(f, 'alert-danger', '添加失败：' + data.reason);
 				}
-				btn.button("reset");
 			}, "json");
 		}
 	});
@@ -104,7 +104,7 @@ $(function() {
 
 //加载员工
 function loadAdmin() {
-	$.get("load_all_admin.do", {}, function(data) {
+	$.get("load_all_admin.do", function(data) {
 		$("#admin_body").html("");
 		for (var i in data) {
 			var tr = $("<tr></tr>");
@@ -112,8 +112,8 @@ function loadAdmin() {
 			var td2 = $("<td>" + data[i].ad_username + "</td>");
 			var td3 = $("<td>" + data[i].ad_name + "</td>");
 			var td4 = $("<td>" + data[i].ad_tel + "</td>");
-			var td5 = $("<td ad_pow=" + data[i].ad_pow + ">" + data[i].ad_pow == 1 ? "管理员" : "普通员工" + "</td>");
-			var td6 = $("<td>" + data[i].ad_date + "</td>");
+			var td5 = $("<td ad_pow=" + data[i].ad_pow + ">" + (data[i].ad_pow == 1 ? "管理员" : "普通员工") + "</td>");
+			var td6 = $("<td>" + formatDate(data[i].ad_date) + "</td>");
 			var td7 = $('<td><button class="btn btn-warning btn-sm">修改</button></td>');
 			tr.append(td1, td2, td3, td4, td5, td6, td7);
 			$("#admin_body").append(tr);

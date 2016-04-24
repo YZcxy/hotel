@@ -27,12 +27,12 @@ $(function() {
 
 //加载所有入住信息
 function loadInroom() {
-	$.get("load_all_book.do", {}, function(data) {
+	$.get("load_all_inroom.do", {}, function(data) {
 		$("#room_body").html("");
 		for (var i in data) {
 			var tr = $("<tr></tr>");
 			var td1 = $("<td>" + data[i].rb_id + "</td>");
-			var td2 = $("<td r_typeid='" + data[i].u_username + "'>" + data[i].rt_name + "</td>");
+			var td2 = $("<td r_typeid='" + data[i].u_username + "'>" + data[i].u_username + "</td>");
 			var td3 = $("<td>" + data[i].u_name + "</td>");
 			var td4 = $("<td>" + data[i].r_num + "</td>");
 			var td5 = $("<td>" + data[i].rb_indate + "</td>");

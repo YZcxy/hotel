@@ -10,7 +10,7 @@ $(function() {
 	$("#login_admin").html($.cookie("ad_username"));
 	//退出
 	$("#exit_admin").click(function() {
-		$.post("eixt_user.do", function() {
+		$.post("exit_user.do", function() {
 			$.removeCookie("u_username");
 			$.removeCookie("ad_username");
 			location.href = "index.jsp#login=true";
@@ -43,4 +43,27 @@ function setLog(obj, type, text) {
 	div.append(a, p);
 
 	obj.before(div);
+}
+
+//格式化日期
+function formatDate(t) {
+	var _date = new Date(t);
+	var y = _date.getFullYear();
+	var m = Number(_date.getMonth()) + 1;
+	var d = _date.getDate();
+	var h = _date.getHours();
+	var _m = _date.getMinutes();
+	y = getFormat(y);
+	m = getFormat(m);
+	d = getFormat(d);
+	h = getFormat(h);
+	_m = getFormat(-m);
+	return y + "-" + m + "-" + d;
+	function getFormat(str) {
+		str = str.toString();
+		if (str.length == 1) {
+			str = "0" + str;
+		}
+		return str;
+	}
 }

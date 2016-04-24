@@ -124,7 +124,7 @@
 	返回：success,reason
 
 退出账号
-	url:eixt_user.do
+	url:exit_user.do
 	参数：无
 	返回：无
 

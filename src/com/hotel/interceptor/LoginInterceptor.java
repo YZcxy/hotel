@@ -30,6 +30,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 			// 如果进行注册提交，放行
 			return true;
 		}
+		
+		if (url.indexOf("load_room_type.do") >= 0) {
+			// 如果进行注册提交，放行
+			return true;
+		}
+		
 
 
 		HttpSession session = request.getSession();
