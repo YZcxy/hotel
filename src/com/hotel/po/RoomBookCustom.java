@@ -11,9 +11,11 @@ public class RoomBookCustom{
 	private String r_num;
 	private String rt_name;
 	private String rb_bookdate;
+	private String rb_indate;
 	private String r_size;
 	private int r_isbath;
 	private float r_money;
+	private int rb_status;
 	public String getType() {
 		return type;
 	}
@@ -74,6 +76,12 @@ public class RoomBookCustom{
 	public void setRb_bookdate(String rb_bookdate) {
 		this.rb_bookdate = rb_bookdate;
 	}
+	public String getRb_indate() {
+		return rb_indate;
+	}
+	public void setRb_indate(String rb_indate) {
+		this.rb_indate = rb_indate;
+	}
 	public String getR_size() {
 		return r_size;
 	}
@@ -91,6 +99,12 @@ public class RoomBookCustom{
 	}
 	public void setR_money(float r_money) {
 		this.r_money = r_money;
+	}
+	public int getRb_status() {
+		return rb_status;
+	}
+	public void setRb_status(int rb_status) {
+		this.rb_status = rb_status;
 	}
 	
 }

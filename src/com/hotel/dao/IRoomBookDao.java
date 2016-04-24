@@ -13,4 +13,8 @@ public interface IRoomBookDao {
 	boolean addBook(RoomBookCustom rbc);
 	List<RoomBook> getAllBook();
 	List<RoomBook> getUserBook(String u_username);
+	boolean deleteBook(int rb_id);
+	boolean addInroom(RoomBookCustom rbc);
+	boolean changeBookInroom(int rb_id);
+	List<RoomBook> loadAllInroom();
 }

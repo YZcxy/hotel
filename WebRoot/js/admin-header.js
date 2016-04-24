@@ -10,9 +10,9 @@ $(function() {
 	$("#login_admin").html($.cookie("ad_username"));
 	//退出
 	$("#exit_admin").click(function() {
+		$.removeCookie("u_username");
+		$.removeCookie("ad_username");
 		$.post("exit_user.do", function() {
-			$.removeCookie("u_username");
-			$.removeCookie("ad_username");
 			location.href = "index.jsp#login=true";
 		});
 	});

@@ -30,19 +30,7 @@
 								<th>操作</th>
 							</tr>
 						</thead>
-						<tbody id="room_body">
-							<tr>
-								<td>1</td>
-								<td>chen</td>
-								<td>陈杰</td>
-								<td>320</td>
-								<td>2016-12-02</td>
-								<td>
-									<button class="btn btn-danger btn-sm">删除</button>
-								</td>
-							</tr>
-
-						</tbody>
+						<tbody id="room_body"></tbody>
 					</table>
 				</div>
 
@@ -68,7 +56,6 @@
 				</div>
 			</div>
 		</div>
-
 		<script src="js/admin-inroom.js"></script>
 
 	</body>

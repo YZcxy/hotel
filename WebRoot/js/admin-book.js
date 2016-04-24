@@ -32,6 +32,7 @@ $(function() {
 			$.post("delete_book.do", {
 				rb_id: id
 			}, function(data) {
+				$("#deleteConform").modal("hide");
 				btn.button("reset");
 				if (data.success == true) {
 					loadBook();

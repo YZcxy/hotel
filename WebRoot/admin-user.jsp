@@ -32,20 +32,7 @@
 								<th>修改</th>
 							</tr>
 						</thead>
-						<tbody id="admin_body">
-							<tr>
-								<td>1</td>
-								<td>chen</td>
-								<td>王二</td>
-								<td>12348645345</td>
-								<td>普通员工</td>
-								<td>2013-12-12 18:11:12</td>
-								<td>
-									<button class="btn btn-warning btn-sm">修改</button>
-								</td>
-							</tr>
-
-						</tbody>
+						<tbody id="admin_body"></tbody>
 					</table>
 				</div>
 

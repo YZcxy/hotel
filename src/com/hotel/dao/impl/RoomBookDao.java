@@ -67,6 +67,22 @@ public class RoomBookDao implements IRoomBookDao {
 		}
 		return list;
 	}
+	@Override
+	public List<RoomBook> loadAllInroom() {
+		SqlSession session = null;
+		List<RoomBook> list = new ArrayList<RoomBook>();
+		try {
+			session = MyBatisUtil.createSession();
+			list = session.selectList(RoomBook.class.getName()+".loadAllInroom");
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return list;
+	}
+	
 
 	@Override
 	public List<RoomBook> getUserBook(String u_username) {
@@ -83,5 +99,62 @@ public class RoomBookDao implements IRoomBookDao {
 		}
 		return list;
 	}
+
+	@Override
+	public boolean deleteBook(int rb_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.insert(RoomBook.class.getName()+".deleteBook",rb_id);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public boolean addInroom(RoomBookCustom rbc) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		//获取多个房间号
+		try {
+			session = MyBatisUtil.createSession();
+			
+			session.insert(RoomBook.class.getName()+".addInroom",rbc);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public boolean changeBookInroom(int rb_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.update(RoomBook.class.getName()+".changeBookInroom",rb_id);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
 	
 }
