@@ -24,6 +24,7 @@ public class RoomBookController {
 		List<Room> list = RoomBookService.loadSelectRoom(rbc);
 		return list;
 	}
+	//预定房间
 	@RequestMapping("add_book")
 	@ResponseBody
 	public Map addBook(RoomBookCustom rbc){
@@ -45,4 +46,28 @@ public class RoomBookController {
 	public List<RoomBook> loadBookInfo(String u_username){
 		return RoomBookService.loadBookInfo(u_username);
 	}
+	@RequestMapping("delete_book")
+	@ResponseBody
+	public Map deleteBook(int rb_id){
+		Map map = new HashMap();
+		if(RoomBookService.deleteBook(rb_id)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+		}
+		return map;
+	}
+	//入住房间
+	@RequestMapping("add_inroom")
+	@ResponseBody
+	public Map addInroom(RoomBookCustom rbc){
+		Map map = new HashMap();
+		if(RoomBookService.addInroom(rbc)){
+			map.put("success", true);
+		}else{
+			map.put("success", false);
+		}
+		return map;
+	}
+
 }

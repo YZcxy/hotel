@@ -83,5 +83,43 @@ public class RoomBookDao implements IRoomBookDao {
 		}
 		return list;
 	}
+
+	@Override
+	public boolean deleteBook(int rb_id) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		try {
+			session = MyBatisUtil.createSession();
+			session.insert(RoomBook.class.getName()+".deleteBook",rb_id);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
+
+	@Override
+	public boolean addInroom(RoomBookCustom rbc) {
+		SqlSession session = null;
+		boolean isSuccess = false;
+		//获取多个房间号
+		try {
+			session = MyBatisUtil.createSession();
+			
+			session.insert(RoomBook.class.getName()+".addInroom",rbc);
+			session.commit();
+			isSuccess = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.rollback();
+		}finally{
+			MyBatisUtil.closeSession(session);
+		}
+		return isSuccess;
+	}
 	
 }

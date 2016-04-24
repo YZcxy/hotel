@@ -27,5 +27,13 @@ public class RoomBookService {
 		
 		return rb.getUserBook(u_username);
 	}
+	public static boolean deleteBook(int rb_id) {
+		
+		return rb.deleteBook(rb_id);
+	}
+	public static boolean addInroom(RoomBookCustom rbc) {
+		
+		return rb.addInroom(rbc);
+	}
 
 }

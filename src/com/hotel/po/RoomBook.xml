@@ -31,6 +31,21 @@
 
 		)
 	</insert>
+	<insert id="addInroom" parameterType="RoomBookCustom">
+	INSERT INTO room_book (rb_uid,rb_rid,rb_indate)
+		VALUES(
+			(SELECT `user`.u_id
+				FROM `user`
+				WHERE `user`.u_username=#{username}
+				),
+				(
+				SELECT room.r_id
+				FROM room
+				WHERE room.r_num=#{num}
+				),#{date}
+
+		)
+	</insert>
 	<select id="getAllBook" resultType="RoomBookCustom">
 		SELECT *
 		FROM room,room_book,`user`
@@ -44,6 +59,11 @@ FROM (SELECT *
 		FROM `user`
 		WHERE `user`.u_username=#{username}) AS u,room_book,room,room_type
 WHERE u.u_id=room_book.rb_uid AND room.r_id=room_book.rb_rid AND room.r_typeid=room_type.rt_id
-		
+		order by rb_id
 	</select>
+	<delete id="deleteBook" parameterType="int">
+		DELETE 
+		FROM room_book
+		WHERE room_book.rb_id=#{rb_id}
+	</delete>
 </mapper>
