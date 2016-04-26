@@ -33,7 +33,7 @@ public class LoginFilter implements Filter{
 			//直接放行
 		}else if (username == null) {
 			// 身份不存在，转发
-			resp.sendRedirect(basePath +"/index.jsp?login=ture");
+			resp.sendRedirect(basePath +"/index.jsp?login=true");
 		}else if(pow.equals(0)){
 			if (url.indexOf("admin") >= 0){
 				//如果权限为0，则为用户，禁止进入后台管理页面
