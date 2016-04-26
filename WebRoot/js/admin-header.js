@@ -13,7 +13,7 @@ $(function() {
 		$.removeCookie("u_username");
 		$.removeCookie("ad_username");
 		$.post("exit_user.do", function() {
-			location.href = "index.jsp#login=true";
+			location.href = "index.jsp?login=true";
 		});
 	});
 
