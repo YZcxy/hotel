@@ -226,6 +226,22 @@
 						</div>
 					</div>
 				</div>
+				<!-- 权限不足弹窗-->
+				<div class="modal fade" id="powAlert">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+								<h4>权限不足</h4>
+							</div>
+							<div class="modal-body">
+								抱歉，您没有权限进行操作<br><br>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 

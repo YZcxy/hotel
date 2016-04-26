@@ -136,8 +136,8 @@
 
 										<div class="col-xs-9">
 											<select class="form-control" name="ad_pow">
-												<option value="1">管理员</option>
-												<option value="2">普通员工</option>
+												<option value="2">管理员</option>
+												<option value="3">普通员工</option>
 											</select>
 										</div>
 									</div>

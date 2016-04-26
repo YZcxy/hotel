@@ -10,7 +10,7 @@ $(function() {
 			});
 		});
 	} else if ($.cookie("ad_username")) {
-		$("#_login_info").html('<li>欢迎您，'+$.cookie("ad_username")+'</li><li><a href="admin-room-type.jsp" class="btn btn-info">后台管理</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
+		$("#_login_info").html('<li>欢迎您，'+$.cookie("ad_username")+'</li><li><a href="admin-customer.jsp" class="btn btn-info">后台管理</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
 		$("#_exit").click(function() {
 			$.removeCookie("u_username");
 			$.removeCookie("ad_username");
@@ -155,8 +155,8 @@ $(function() {
 
 //判断是否打开登录窗口
 $(function() {
-	var url = location.href;
-	if (url.indexOf("#login=true") > 0) {
+	var url = location.search;
+	if (url.indexOf("login=true") > 0) {
 		$("#loginBox").modal();
 		history.pushState({}, document.title, "./");
 	}

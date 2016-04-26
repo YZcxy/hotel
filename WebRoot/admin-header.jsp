@@ -18,11 +18,11 @@
 <!--左边-->
 <div class="left_navbar">
     <ul class="list-unstyled">
+	    <li><a href="admin-customer.jsp">客户信息</a></li>
+        <li><a href="admin-book.jsp">客房预订</a></li>
+        <li><a href="admin-inroom.jsp">客房入住</a></li>
         <li><a href="admin-room-type.jsp">客房类型管理</a></li>
         <li><a href="admin-room.jsp">客房管理</a></li>
-        <li><a href="admin-customer.jsp">客户信息管理</a></li>
-        <li><a href="admin-book.jsp">客房预订管理</a></li>
-        <li><a href="admin-inroom.jsp">客房入住管理</a></li>
         <li><a href="admin-user.jsp">员工管理</a></li>
     </ul>
 </div>

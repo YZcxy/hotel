@@ -288,3 +288,12 @@ function loadCustomer() {
 		}
 	});
 }
+
+//判断是否权限不足
+$(function(){
+	var url = location.search;
+	if(url.indexOf("pow=false")>0){
+		$("#powAlert").modal();
+		history.pushState({}, document.title, "admin-customer.jsp");
+	}
+});
