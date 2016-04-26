@@ -30,10 +30,10 @@ public class LoginFilter implements Filter{
 		String url = req.getRequestURI();
 		
 		if(url.indexOf("index") >= 0){
-			chain.doFilter(request, response);
+			//直接放行
 		}else if (username == null) {
 			// 身份不存在，转发
-			resp.sendRedirect(basePath +"/index.jsp");
+			resp.sendRedirect(basePath +"/index.jsp?login=ture");
 		}else if(pow.equals(0)){
 			if (url.indexOf("admin") >= 0){
 				//如果权限为0，则为用户，禁止进入后台管理页面
@@ -43,8 +43,7 @@ public class LoginFilter implements Filter{
 			//如果权限为3，则为普通员工，禁止访问以下页面
 			if(url.indexOf("admin-room") >= 0){
 				resp.sendRedirect(basePath + "/admin-customer.jsp?pow=false");
-			}
-			if(url.indexOf("admin-user") >= 0){
+			}else if(url.indexOf("admin-user") >= 0){
 				resp.sendRedirect(basePath + "/admin-customer.jsp?pow=false");
 			}
 		}else if(pow.equals(2)){
@@ -53,7 +52,7 @@ public class LoginFilter implements Filter{
 				resp.sendRedirect(basePath + "/admin-customer.jsp?pow=false");
 			}
 		}
-		
+		chain.doFilter(request, response);
 	}
 	
 	
