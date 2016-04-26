@@ -107,14 +107,19 @@ function loadAdmin() {
 	$.get("load_all_admin.do", function(data) {
 		$("#admin_body").html("");
 		for (var i in data) {
+			var pow = data[i].ad_pow;
+			var dis = "";
+			if (pow == 1) {
+				dis = "disabled";
+			}
 			var tr = $("<tr></tr>");
 			var td1 = $("<td>" + data[i].ad_id + "</td>");
 			var td2 = $("<td>" + data[i].ad_username + "</td>");
 			var td3 = $("<td>" + data[i].ad_name + "</td>");
 			var td4 = $("<td>" + data[i].ad_tel + "</td>");
-			var td5 = $("<td ad_pow=" + data[i].ad_pow + ">" + (data[i].ad_pow == 1 ? "管理员" : "普通员工") + "</td>");
+			var td5 = $("<td ad_pow=" + pow + ">" + (pow == 1 ? "超级管理员" : pow == 2 ? "管理员" : "普通员工") + "</td>");
 			var td6 = $("<td>" + formatDate(data[i].ad_date) + "</td>");
-			var td7 = $('<td><button class="btn btn-warning btn-sm">修改</button></td>');
+			var td7 = $('<td><button class="btn btn-warning btn-sm" ' + dis + '>修改</button></td>');
 			tr.append(td1, td2, td3, td4, td5, td6, td7);
 			$("#admin_body").append(tr);
 		}

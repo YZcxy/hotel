@@ -44,6 +44,9 @@ body {
 .room table td:last-child button {
   padding: 2px 7px;
 }
+.room table td:last-child button:first-child {
+  margin-right: 6px;
+}
 .room form label.col-xs-3 {
   text-align: left;
 }
