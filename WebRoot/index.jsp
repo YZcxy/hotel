@@ -52,12 +52,13 @@
 
             <div class="box">
                 <ul class="list-inline" id="hotel_pictures_list">
-                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
-                    <li><img class="img-thumbnail" src="img/source/aa2.jpg"></li>
-                    <li><img class="img-thumbnail" src="img/source/aa3.jpg"></li>
-                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
-                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
-                    <li><img class="img-thumbnail" src="img/source/aa1.jpg"></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p1.png"></a></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p2.png"></a></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p3.png"></a></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p4.png"></a></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p5.png"></a></li>
+                    <li><a href="book.jsp"><img class="img-thumbnail" src="img/p6.png"></a></li>
+                    
                 </ul>
             </div>
         </div>

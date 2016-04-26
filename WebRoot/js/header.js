@@ -2,18 +2,18 @@ $(function() {
 	//判断是否登录
 	if ($.cookie("u_username")) {
 		$("#_login_info").html('<li>欢迎您，' + $.cookie("u_username") + '</li><li><a href="mybook.jsp" class="btn btn-info">我的预定</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
-		$.removeCookie("u_username");
-		$.removeCookie("ad_username");
 		$("#_exit").click(function() {
+			$.removeCookie("u_username");
+			$.removeCookie("ad_username");
 			$.post("exit_user.do", function() {		
 				location.reload();
 			});
 		});
 	} else if ($.cookie("ad_username")) {
 		$("#_login_info").html('<li>欢迎您，'+$.cookie("ad_username")+'</li><li><a href="admin-room-type.jsp" class="btn btn-info">后台管理</a><a href="javascript:;" id="_exit" class="btn btn-danger">退出</a></li>');
-		$.removeCookie("u_username");
-		$.removeCookie("ad_username");
 		$("#_exit").click(function() {
+			$.removeCookie("u_username");
+			$.removeCookie("ad_username");
 			$.post("exit_user.do", function() {
 				location.reload();
 			});
